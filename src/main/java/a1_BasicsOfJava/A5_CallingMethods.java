@@ -1,6 +1,6 @@
 package a1_BasicsOfJava;
 
-public class A5CallingMethods {
+public class A5_CallingMethods {
 	
 	public void a1() {
 		System.out.println("I am a non-static method from A5CallingMethods");
@@ -14,7 +14,7 @@ public class A5CallingMethods {
 	
 //		calling a non-static method from a non-static method (within a same class)
 		a1();
-		A5CallingMethods obj = new A5CallingMethods();
+		A5_CallingMethods obj = new A5_CallingMethods();
 		obj.a1();
 		
 //		calling a static method from a non-static method (within a same class)
@@ -35,7 +35,7 @@ public class A5CallingMethods {
 	public static void test2() {
 		
 //		calling a non-static method from a static method (within a same class)
-		A5CallingMethods obj = new A5CallingMethods();
+		A5_CallingMethods obj = new A5_CallingMethods();
 		obj.a1();
 		
 //		calling a static method from a static method (within a same class)

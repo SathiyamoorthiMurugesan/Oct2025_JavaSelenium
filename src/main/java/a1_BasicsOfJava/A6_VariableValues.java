@@ -1,15 +1,24 @@
 package a1_BasicsOfJava;
 
-public class A6VariableValues {
+public class A6_VariableValues {
 	
 	static int b; // declare
 	
 	static int c = 20; // declare + initialize;
-
+	
+	int d = 0;
+	
 	public static void main(String[] args) {
-		A6VariableValues obj = new A6VariableValues();
+		
+		System.out.println(c);
+//		
+		A6_VariableValues obj = new A6_VariableValues();
 		obj.method1();
-		obj.method2();
+		System.out.println(c);
+
+		obj.method2(); 
+//		Here C is 23, which is the value of method1()'s local variable 'a'
+//		So by assigning local variable's value to a class or static variable, we can use the local variable's value in other methods too
 
 	}
 	
@@ -17,6 +26,7 @@ public class A6VariableValues {
 		
 		int a = 10; // declare and initialize
 		
+//		a;
 		System.out.println(a);
 		
 //		int a = 20;
@@ -25,8 +35,8 @@ public class A6VariableValues {
 		System.out.println(a);
 		
 //		a++;
-		System.out.println(a++);
-		System.out.println(a);
+		System.out.println(a++);  // 21
+		System.out.println(a);   // 21
 		
 		a = a++;
 		System.out.println(a);
@@ -51,9 +61,13 @@ public class A6VariableValues {
 		System.out.println(c);
 		System.out.println(a);
 //		I have assigned the local variable's value to a class level variable('c')
-	
+		
+		System.out.println("*****");
+		System.out.println(d = a);
+		System.out.println("value of d is " +         d);
+		
 	}
-	
+		
 	public void method2() {
 		
 //		System.out.println(a);

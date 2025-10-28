@@ -50,7 +50,7 @@ public class Test_VariableAsParameter {
 		
      obj.buyFruit();  //calling non-static and non parameterized method
      obj.buyApple();
-     obj.buyOrange();
+     //obj.buyOrange();
      buyGrapes(); //calling static method directly
      
      obj.buyFruits("banana"); //calling non-static parameterized method

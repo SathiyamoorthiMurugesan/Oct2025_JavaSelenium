@@ -1,17 +1,22 @@
 package a1_BasicsOfJava;
 
-public class A8BringingLocalVariableOutsideTheMethod {
+public class A8_BringingLocalVariableOutsideTheMethod {
 	
 	int aa;
 	static String xyz;
 
 	public static void main(String[] args) {
-		A8BringingLocalVariableOutsideTheMethod obj = new A8BringingLocalVariableOutsideTheMethod();
+		A8_BringingLocalVariableOutsideTheMethod obj = new A8_BringingLocalVariableOutsideTheMethod();
 		obj.method1();
 		obj.method2();
 		
 		obj.method3("Java");
 		obj.method4();
+		
+//		System.out.println(obj.abc);
+		
+		AAA obj1 = new AAA();
+		obj1.method11();
 	}
 	
 	
@@ -47,6 +52,8 @@ public class A8BringingLocalVariableOutsideTheMethod {
 //		CC = abc;
 		AAA obj = new AAA();
 		obj.CC = abc;
+		
+		
 	}
 	
 	public void method4() {
@@ -63,5 +70,6 @@ class AAA {
 	public void method11() {
 //		System.out.println(abc);
 		System.out.println(BB);
+		System.out.println(CC);
 	}
 }

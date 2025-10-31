@@ -1,4 +1,4 @@
-package a1_BasicsOfJava;
+ package a1_BasicsOfJava;
 
 public class A7_VariableAsParameter {
 

@@ -15,7 +15,7 @@ package a1_BasicsOfJava;
 	Here, str - stored in Stack memory
 		Sathya - stored in "SCP" of Heap memory 
 		
- * 
+ * String constant pool - SCP
  * How String Object is stored in Java 
  * 
  * Object creation for String
@@ -27,6 +27,6 @@ package a1_BasicsOfJava;
  * 
  */
 
-public class B2MemoryManagementWithString {
+public class B2_MemoryManagementWithString {
 
 }

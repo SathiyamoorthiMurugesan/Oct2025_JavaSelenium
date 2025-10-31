@@ -33,21 +33,21 @@ Detailing Object Creation:
 * * static variable - method area (also known as the class area) of memory, which is a part of the JVM.
 */
 
-public class B1MemoryManagement {
+public class B1_MemoryManagement {
 	
 	int a = 10; // non-static variable
 	static int c = 20; // static variable 
 
 	public void method1() {
 		int c = 30; // local variable
-		B1MemoryManagement obj1 = new B1MemoryManagement();
+		B1_MemoryManagement obj1 = new B1_MemoryManagement();
 
-		B1MemoryManagement obj3 = new B1MemoryManagement();
-		B1MemoryManagement obj4 = new B1MemoryManagement();
+		B1_MemoryManagement obj3 = new B1_MemoryManagement();
+		B1_MemoryManagement obj4 = new B1_MemoryManagement();
 	}
 
 	public void method2() {
-		B1MemoryManagement obj2 = new B1MemoryManagement();
+		B1_MemoryManagement obj2 = new B1_MemoryManagement();
 	}
 
 }

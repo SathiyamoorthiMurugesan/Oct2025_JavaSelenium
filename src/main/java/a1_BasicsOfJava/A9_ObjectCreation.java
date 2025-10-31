@@ -1,7 +1,7 @@
 package a1_BasicsOfJava;
 
-//public class A9ObjectCreation {
-	public class A9ObjectCreation extends Object {
+public class A9_ObjectCreation {
+//	public class A9_ObjectCreation extends Object {
 	
 		
 //		* Whenever we want to use non static variables/methods, we need to create object for the
@@ -13,6 +13,7 @@ package a1_BasicsOfJava;
 //		* Syntax for object creation
 //			ClassName ObjectName = new ClassName();
 //			ReferenceClassName ObjectVariableName = new ConstructorOfClassForWhichWewantToCreateObject();
+//			access modifier - default & non static
 //			ClassA obj = new ClassA();
 //		* We call it as Object instantiation or Object creation
 //		* We create object only for classes
@@ -22,7 +23,7 @@ package a1_BasicsOfJava;
 		
 		
 //		* Java is a Object Oriented Programming language.
-//		* But its not 100% OOPs language.
+//		* But its not 100% OOPs language. Reason?
 //		* Almost everything in Java is based on Object only
 //		* Super most class of Java is Object class
 //		* Whatever class we create, it always follows Object class by default. 
@@ -31,33 +32,37 @@ package a1_BasicsOfJava;
 //		ClassA obj1 = new ClassA();
 //
 //		ClassA - Reference Class Name
-//		Obj1 - Object variable
+//		Obj1 - Object variable name
 //		new = key word to create an obj
 //		ClassA() - Constructor or Object creation or instance creation
+//		access modifier - default & non-static
 
 
 	static int receptionist = 20;
 
 	int a = 10;
+	String str = "abc";
 	public void method1() {
-
+		System.out.println("I am method1");
 	}
 
 	public void method2() {
-		A9ObjectCreation obj = new A9ObjectCreation();
+		A9_ObjectCreation obj = new A9_ObjectCreation();
 			obj.method1();
 			
 //			obj.a;
 		System.out.println(obj.a);
+		System.out.println(obj.str);
 		System.out.println(receptionist);
 		
+//		System.out.println(obj.receptionist);
 //		obj.method3();
-//		static methods should be accessed in the static way
+//		static methods/variables should be accessed in the static way
 
 			}
 
 	static public void method3() {
-		A9ObjectCreation obj = new A9ObjectCreation();
+		A9_ObjectCreation obj = new A9_ObjectCreation();
 		obj.method1();
 		
 		System.out.println(receptionist);
@@ -69,26 +74,26 @@ package a1_BasicsOfJava;
 class ClassB {
 
 	public static void main(String arg[]) {
-		A9ObjectCreation obj = new A9ObjectCreation();
+		A9_ObjectCreation obj = new A9_ObjectCreation();
 		obj.method1();
 		
 //		System.out.println(a);
 		System.out.println(obj.a);
 		
 //		System.out.println(receptionist);
-		System.out.println(A9ObjectCreation.receptionist);
+		System.out.println(A9_ObjectCreation.receptionist);
 	}
 
 	public void methodA() {
 
-		A9ObjectCreation obj = new A9ObjectCreation();
+		A9_ObjectCreation obj = new A9_ObjectCreation();
 		obj.method1();
 		
 //		System.out.println(a);
 		System.out.println(obj.a);
 		
 //		System.out.println(receptionist);
-		System.out.println(A9ObjectCreation.receptionist);
+		System.out.println(A9_ObjectCreation.receptionist);
 	}
 
 }

@@ -40,7 +40,7 @@ package a1_BasicsOfJava;
  * * Instead of variables or parameters, we can use the method with return type
  */
 
-public class B3VariableAsReturnType {
+public class B3_VariableAsReturnType {
 	
 	static String abc; //declaration
 	int classVariableToStoreTheLocalVariableValue; 
@@ -48,7 +48,7 @@ public class B3VariableAsReturnType {
 	int classVariableToStoreTheLocalVariableValue2;
 
 	public static void main(String[] args) {
-		B3VariableAsReturnType obj = new B3VariableAsReturnType();
+		B3_VariableAsReturnType obj = new B3_VariableAsReturnType();
 		obj.buySoap();
 		obj.buySoap(0);
 		obj.buySoap("1");

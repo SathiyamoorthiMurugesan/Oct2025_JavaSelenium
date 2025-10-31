@@ -1,6 +1,6 @@
 package testPractice_Java;
 
-public class Test_VariableValues {
+public class Test_A4_VariableValues {
 	
 public int a = 10;
 int b = 20;
@@ -11,7 +11,7 @@ static int count = '1';
 
 	public static void main(String args[]) {
 		
-		Test_VariableValues obj = new Test_VariableValues();
+		Test_A4_VariableValues obj = new Test_A4_VariableValues();
 		
 		System.out.println("Value of b is: "+obj.b); //calling non-static variable using object
 		

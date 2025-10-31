@@ -45,15 +45,14 @@ public class A8_BringingLocalVariableOutsideTheMethod {
 		System.out.println(abc);
 		System.out.println(xyz);
 		xyz = abc;
-		AAA.BB = abc;
+     	AAA.BB = abc;
 		System.out.println(xyz);
 		
 //		I want to assign the value of abc to CC. 
 //		CC = abc;
 		AAA obj = new AAA();
 		obj.CC = abc;
-		
-		
+	
 	}
 	
 	public void method4() {
@@ -71,5 +70,6 @@ class AAA {
 //		System.out.println(abc);
 		System.out.println(BB);
 		System.out.println(CC);
+		
 	}
 }

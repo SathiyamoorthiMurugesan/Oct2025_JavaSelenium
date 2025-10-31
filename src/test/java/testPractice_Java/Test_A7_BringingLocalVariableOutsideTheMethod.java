@@ -1,6 +1,6 @@
 package testPractice_Java;
 
-public class Test_BringingLocalVariableOutsideTheMethod {
+public class Test_A7_BringingLocalVariableOutsideTheMethod {
 
 	int var1;   //var1 is a non-static class level variable having datatype as int. It's only declared. not initialized.
 	static String var2="Welcome"; //var2 is a static variable. so its scope belongs to the entire class
@@ -9,7 +9,7 @@ public class Test_BringingLocalVariableOutsideTheMethod {
 		
 		//creating the object for a class to access non-static methods/variables
 		
-		Test_BringingLocalVariableOutsideTheMethod obj = new Test_BringingLocalVariableOutsideTheMethod(); 
+		Test_A7_BringingLocalVariableOutsideTheMethod obj = new Test_A7_BringingLocalVariableOutsideTheMethod(); 
 		
 		obj.method1("To Java");
 		obj.method2();
@@ -50,10 +50,17 @@ public class Test_BringingLocalVariableOutsideTheMethod {
 		
 		Class2.str1=abc;  //assigning value of abc to a static variable str1 in another class along with the class name
 		
-		Class2 obj = new Class2(); //creating obj to the class to use non-static variable
-		obj.str2 = xyz;
 		
+		/*we cannot assign the value of non-static variable(str2) from another class. because Class2 doesn't know that we have created 
+		an object inside method2. whatever happens inside method2 will be visible only to method2.
 		
+		In-order to use the non-static variable from diff. class, first we have to assign it to the class level variable in method5
+		 
+		*/ 
+		
+		//Class2 obj = new Class2(); //creating obj to the class to use non-static variable
+		//obj.str2 = xyz;
+		//System.out.println(obj.str2);
 
 	}
 	
@@ -70,7 +77,7 @@ public class Test_BringingLocalVariableOutsideTheMethod {
 	}
 	public static void method4() {
 				
-		Test_BringingLocalVariableOutsideTheMethod obj = new Test_BringingLocalVariableOutsideTheMethod();
+		Test_A7_BringingLocalVariableOutsideTheMethod obj = new Test_A7_BringingLocalVariableOutsideTheMethod();
 		System.out.println(obj.xyz); 
 		//creating instance for the class since we are calling a non-static variable into a static method
 		
@@ -94,5 +101,9 @@ class Class2{  //creating a new class with default access modifier
 		System.out.println(c);
 		System.out.println(str1);
 		System.out.println(str2);
+		
+		//Test_BringingLocalVariableOutsideTheMethod obj = new Test_BringingLocalVariableOutsideTheMethod();
+		//str2=Test_BringingLocalVariableOutsideTheMethod.abc;
+		
 	}
 }

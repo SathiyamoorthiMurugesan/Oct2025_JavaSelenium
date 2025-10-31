@@ -10,7 +10,7 @@ package testPractice_Java;
 //* It helps us to run a single method with multiple values of same data type.
 // *Generally we can not write two methods with same method name. But we can achieve it using parameters
 
-public class Test_VariableAsParameter {
+public class Test_A5_VariableAsParameter {
 
 	public void buyFruit() {      //buyFruit is a non-static method with return type as void and it's a non- parameterized method and having access modifier as public
 		System.out.println("Buy Fruit");
@@ -49,7 +49,7 @@ public class Test_VariableAsParameter {
 	
 	public static void main(String[] args) {   //main method
 	
-	Test_VariableAsParameter obj = new Test_VariableAsParameter();
+	Test_A5_VariableAsParameter obj = new Test_A5_VariableAsParameter();
 		
      obj.buyFruit();  //calling non-static and non parameterized method
      obj.buyApple();

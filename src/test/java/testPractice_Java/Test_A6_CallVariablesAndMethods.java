@@ -17,7 +17,7 @@ Outside/in another class
  *non-static variable - create an object using the respected class name 
 */
 
-public class Test_CallVariablesAndMethods {
+public class Test_A6_CallVariablesAndMethods {
 	
 	public static int ab = 10;  //static variable declared and initialized outside a method
 	private char bb = 'Z';      //non-static variable declared and initialized outside a method  //private variables having scope only on its own class
@@ -35,7 +35,7 @@ void method1() {
 	
 	System.out.println(ab); //directly calling inside the non-static method since its a static variable 
 	
-	Test_CallVariablesAndMethods obj1=new Test_CallVariablesAndMethods();
+	Test_A6_CallVariablesAndMethods obj1=new Test_A6_CallVariablesAndMethods();
 	System.out.println(obj1.bb);    //created an object as we are calling the non-static variable
 	
 }
@@ -44,7 +44,7 @@ public static void method2() {
 	
 	System.out.println(ab); // calling a static variable inside a static method
     
-	Test_CallVariablesAndMethods obj2=new Test_CallVariablesAndMethods();
+	Test_A6_CallVariablesAndMethods obj2=new Test_A6_CallVariablesAndMethods();
 	System.out.println(obj2.bb);    //created an object as we are calling the non-static variable
     
 	System.out.println(cc);
@@ -58,7 +58,7 @@ System.out.println(ab); // calling a static variable inside a static method
     
 method2();  //calling a static method
 
-Test_CallVariablesAndMethods obj3 = new Test_CallVariablesAndMethods();
+Test_A6_CallVariablesAndMethods obj3 = new Test_A6_CallVariablesAndMethods();
 obj3.method1();
 }
 }
@@ -67,14 +67,14 @@ class Test_Variables_2 {
 	
 	public static void method4() {
 		
-		System.out.println(Test_CallVariablesAndMethods.ab);  //calling a static variable along with the class name
+		System.out.println(Test_A6_CallVariablesAndMethods.ab);  //calling a static variable along with the class name
 		
-		Test_CallVariablesAndMethods obj4 = new Test_CallVariablesAndMethods();
+		Test_A6_CallVariablesAndMethods obj4 = new Test_A6_CallVariablesAndMethods();
 		System.out.println(obj4.cc);
         
 		//System.out.println(obj4.bb);  cannot call the private variable in another class
 		
-		Test_CallVariablesAndMethods.method2();  //calling a static method along with the class name
+		Test_A6_CallVariablesAndMethods.method2();  //calling a static method along with the class name
 		
 		obj4.method2();
 		

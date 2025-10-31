@@ -1,13 +1,13 @@
 package testPractice_Java;
 
 //parameter - we can pass multiple parameters inside the method. passing variables as a parameter
-//Argument - 
+//Argument - variable name is called as an argument
 
 //example: method1(String abc) - string is a parameter and abc is an argument
 
 //* Parameterized variables are considered as local variables.
 
-//* It helps us to run a single method with multiple values of same data type.
+//* It helps us to run a single method with multiple values+.
 // *Generally we can not write two methods with same method name. But we can achieve it using parameters
 
 public class Test_A5_VariableAsParameter {
@@ -31,6 +31,7 @@ public class Test_A5_VariableAsParameter {
 	}
 	
 	public void buyFruits(String fruitName) {  //we can use a same/ duplicate method name as it's a parameterized method
+		//"String fruitName" is a local variable
 		
 		System.out.println("Bought " + fruitName + " Fruit");
 	}

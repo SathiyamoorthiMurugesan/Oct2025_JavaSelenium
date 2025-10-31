@@ -20,7 +20,9 @@ package a1_BasicsOfJava;
  * * We can have a method as a 
  * 		* static or non-static - public void method1() or public static void method1()
  * 		* with or without parameters - public void method1(int a) or public void method1()
- * 		* with or without return type  - public int method1() or public void method1();
+ * 		
+ * 
+ * * with or without return type  - public int method1() or public void method1();
  * 		* or any combination of above. 
  *  * 
  * * Converting return type method as a variable
@@ -113,7 +115,7 @@ public class B3VariableAsReturnType {
 
 	public char buySoap(String a) {
 
-//		return 'a';
+	//	return 'a';
 //		return '1';
 		return '@';
 	}

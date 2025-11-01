@@ -13,13 +13,24 @@ public class B4ClassOrInterfaceAsReturnType {
 		
 		ABC myName = obj.methodB();  //ABC myName = new ABC();
 		myName.method1();
+		obj.methodB().method1();
 		System.out.println(myName.a);
 		
 		
-		obj.b4 = obj.methodC(); //assigned the methodC()'s return type to class level variable 'b4';
+		B4ClassOrInterfaceAsReturnType aaa = obj.methodC(); //B4ClassOrInterfaceAsReturnType aaa = new B4ClassOrInterfaceAsReturnType();
+		aaa.methodA(); //calling non static method
+//		aaa.method10();
+//		method10();
+		obj.b4 = obj.methodC(); //assigned the methodC()'s return type to class level object variable 'b4'; this is Same as below line
+//		B4ClassOrInterfaceAsReturnType b4 = obj.methodC();
 		obj.b4.methodAA();
 		obj.b4.methodB(); // here obj.b4 = obj.methodC();
 		obj.methodC().methodB();
+		
+		AA interfaceVariable = obj.methodD();
+		interfaceVariable.method11();
+		AA.method21();
+		
 		
 //		Java example for Class as a return type - String class
 		
@@ -49,6 +60,10 @@ public class B4ClassOrInterfaceAsReturnType {
 		return 100;
 	}
 	
+	public static void method10() {
+		System.out.println("I am a static method from B4ClassAsReturnType class");
+	}
+	
 	public ABC methodB() {
 		System.out.println("I am method from B4ClassAsReturnType class and return ABC class");
 		return abc;
@@ -61,7 +76,7 @@ public class B4ClassOrInterfaceAsReturnType {
 	
 	AA aa;
 	public AA methodD() {
-		
+		System.out.println("I am method from B4ClassAsReturnType class and return AA interface");
 		return aa;
 	}
 
@@ -91,6 +106,10 @@ class BDE {
 interface AA {
 	
 	public void method11();
+	
+	public static void method21() {
+		
+	}
 }
 
 

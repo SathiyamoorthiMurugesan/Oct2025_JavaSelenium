@@ -1,5 +1,8 @@
 package a1_BasicsOfJava;
 
+// When a method has a return type, once the method runs, 
+//		the method became the return type's datatype and holds the return value;
+
 /* ************* Return Type in Java ********************
  * * If a method has void as a return type, it wont return anything
  * * Return type can be anything (datatypes, class, or interface, etc)
@@ -37,7 +40,7 @@ package a1_BasicsOfJava;
  * 		* Now, you can use the class level variable as it has the value of the local variable
  * 
  * 
- * * Instead of variables or parameters, we can use the method with return type
+ * * We can use the method with return type as a argument for other method
  */
 
 public class B3_VariableAsReturnType {
@@ -61,9 +64,10 @@ public class B3_VariableAsReturnType {
 
 		int balanceAmount = obj.buySoapAndReturnTheBalaceAmount(); // int balanceAmount = 0;
 
+		System.out.println("********");
 		obj.methodA(); // This method takes 15 minutes to run.
 //		Because methodA() has used bringYourFriendToHome() method two times, methodA()'s run time increased.
-		
+		System.out.println("********");
 		
 //		String abc = obj.bringYourFriendToHome(); // Its local variable
 		abc = obj.bringYourFriendToHome(); // Initialising or assigning
@@ -153,6 +157,7 @@ public class B3_VariableAsReturnType {
 //		return 100;
 //		return b =0;
 		return c = 20;
+//		System.out.println(c);
 	}
 
 	int aa = 10;

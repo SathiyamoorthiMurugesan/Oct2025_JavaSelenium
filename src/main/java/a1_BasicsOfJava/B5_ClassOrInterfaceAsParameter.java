@@ -1,11 +1,11 @@
 package a1_BasicsOfJava;
 
-public class B5ClassOrInterfaceAsParameter {
+public class B5_ClassOrInterfaceAsParameter {
 	
 	static int aa = 10;
 
 	public static void main(String[] args) {
-		B5ClassOrInterfaceAsParameter obj = new B5ClassOrInterfaceAsParameter();
+		B5_ClassOrInterfaceAsParameter obj = new B5_ClassOrInterfaceAsParameter();
 		int a = 25;
 		obj.methodEx(a);  //methodEx() needs int as a parameter, so we are passing local variable a as the parameter
 		obj.methodEx(10); //here we are passing direct int value as a parameter

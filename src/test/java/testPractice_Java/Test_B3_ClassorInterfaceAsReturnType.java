@@ -7,7 +7,7 @@ public class Test_B3_ClassorInterfaceAsReturnType {
 
 	int a;
 	Test_B3_ClassorInterfaceAsReturnType abc; // Test_B3_ClassorInterfaceAsReturnType is data type
-	SecondClass zzz;
+	SecondClass zzz = new SecondClass();  //we have to initialize the object 'zzz'to avoid null pointer exception
 
 	public static void main(String[] args) {
 		Test_B3_ClassorInterfaceAsReturnType obj = new Test_B3_ClassorInterfaceAsReturnType();
@@ -35,9 +35,9 @@ public class Test_B3_ClassorInterfaceAsReturnType {
 		var1.method2();
 		var1.method1();
 
-		AAA interfaceVar = obj2.method2(); // method2 returns an interface AAA. so we can access methods in that
+		//AAA interfaceVar = obj2.method2(); // method2 returns an interface AAA. so we can access methods in that
 											// interface through interfaceVar
-		interfaceVar.methodG();
+		//interfaceVar.methodG();
 		AAA.methodH(); // calling static method along with the class name
 
 		ThirdClass var2 = obj2.method1();
@@ -57,7 +57,7 @@ public class Test_B3_ClassorInterfaceAsReturnType {
 
 	public Test_B3_ClassorInterfaceAsReturnType methodC() { // using the same class as return type
 		System.out.println("I am Method C");
-		return abc = new Test_B3_ClassorInterfaceAsReturnType();
+		return abc = new Test_B3_ClassorInterfaceAsReturnType();  //If we not initialize 'abc' it will throw NullPointerException since default value of the object is null
 	}
 
 	public static SecondClass methodD() { // using different class as a return type
@@ -95,7 +95,7 @@ class SecondClass {
 }
 
 class ThirdClass {
-	int u;
+	int u = 2;
 
 	public void methodY() {
 		System.out.println("I am Method Y from Third class");

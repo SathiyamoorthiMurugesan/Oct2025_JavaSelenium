@@ -67,7 +67,6 @@ public class Test_HowToReadPropertyFile {
 
 
 
-
 /*
  * Multiple ways to use FileInputStream:
  * 1.Passing a String Parameter as an argument either directly pasting the filepath or through String variable
@@ -75,4 +74,4 @@ public class Test_HowToReadPropertyFile {
  */
 
 //we can use either FileInputStream or FileReader to read the file data byte by byte.
-//In order to do all these, we have to import the respective java.io files
+//In order to do all these, we have to import the respective package

@@ -1,13 +1,13 @@
 package a1_BasicsOfJava;
 
 //* String is "Sequence of character" (Basic Explanation)
-//* In Java, It is array of character
+//* In Java, It is array of characters
 //* In Java, String is a non- primitive data type
 //* In Java String is a Class also
 //* Why it is class, because we can perform many operations on String
 //* if my String is "Sathya", length - 6, index starts with 0. Then last index is 5 or I can say length -1;
 //
-//How do we define String
+//How do we define/declare String
 //
 //String str = "Raj"; - Literals 
 //String str1 = new String("Ranjith"); - Instance or object creation
@@ -20,13 +20,13 @@ package a1_BasicsOfJava;
 
 
 
-public class C1StringBasic {
+public class C1_StringBasic {
 	
 	int c;//declaration
 	
-	C1StringBasic xyz;//declaration
+	C1_StringBasic xyz;//declaration
 	
-	static C1StringBasic cd; //declaration
+	static C1_StringBasic cd; //declaration
 	
 	public static void main(String[] args) {
 		
@@ -60,7 +60,7 @@ public class C1StringBasic {
 	String abc = null;
 	System.out.println(abc);
 	
-	C1StringBasic obj = new C1StringBasic(); //Object creation //declaration + initialization
+	C1_StringBasic obj = new C1_StringBasic(); //Object creation //declaration + initialization
 	int a = 20;//declaration + initialization
 	
 	System.out.println(obj.c);
@@ -69,9 +69,9 @@ public class C1StringBasic {
 	
 	obj.c = 20; //initialization
 	System.out.println(obj.c);
-	obj.xyz = new C1StringBasic();//initialization
+	obj.xyz = new C1_StringBasic();//initialization
 	
-	cd = new C1StringBasic();
+	cd = new C1_StringBasic();
 	
 	obj.method1();
 	

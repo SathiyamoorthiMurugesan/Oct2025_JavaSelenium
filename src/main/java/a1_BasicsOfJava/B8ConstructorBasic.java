@@ -16,7 +16,7 @@ public class B8ConstructorBasic {
 	// * When we create an Object for a class, default constructor is being called.
 	// * We can also parameterize the constructor
 	// * When the default constructor was implicitly present and you create a
-	// Constructor with parameter
+	// 				Constructor with parameter
 //			* Then the default constructor will vanish. 
 //			* Which means, we can not create an object for the class using default constructor.
 //	   		* If you want default and parameterized constructors, then you need to write the default constructor explicitly. 
@@ -70,8 +70,13 @@ public class B8ConstructorBasic {
 }
 
 class newConstructorDemo {
+	
+//	public newConstructorDemo() {
+//		System.out.println("I am the Default constructor");
+//	}
 
 	public newConstructorDemo(int a) {
+		System.out.println("I am int parameterized constructor");
 
 	}
 
@@ -81,6 +86,40 @@ class newConstructorDemo {
 
 	}
 
+}
+
+
+class ConstructorWithAccessModifiers {
+
+//	public ConstructorWithAccessModifiers() {
+//
+//	}
+	
+	private ConstructorWithAccessModifiers() {
+		
+	}
+	
+//	protected ConstructorWithAccessModifiers() {
+//		
+//	}
+	
+//	default ConstructorWithAccessModifiers() {
+//		
+//	}
+	
+//	ConstructorWithAccessModifiers() {
+//		
+//	}
+	
+	public ConstructorWithAccessModifiers(int a) {
+		
+	}
+
+
+	public static void main(String[] args) {
+		ConstructorWithAccessModifiers obj = new ConstructorWithAccessModifiers();
+		ConstructorWithAccessModifiers obj1 = new ConstructorWithAccessModifiers(10);
+	}
 }
 
 class newConstructorDemo2 {
@@ -99,35 +138,7 @@ class newConstructorDemo2 {
 		
 //		Since constructor is private, we can not create object of the class, outside the class.
 //		ConstructorWithAccessModifiers obj2 = new ConstructorWithAccessModifiers();
-//		ConstructorWithAccessModifiers obj3 = new ConstructorWithAccessModifiers(10);
+		ConstructorWithAccessModifiers obj3 = new ConstructorWithAccessModifiers(10);
 	}
 
-}
-
-class ConstructorWithAccessModifiers {
-
-//	public ConstructorWithAccessModifiers() {
-//
-//	}
-//
-	private ConstructorWithAccessModifiers() {
-
-	}
-//
-//	protected ConstructorWithAccessModifiers() {
-//
-//	}
-//
-//	ConstructorWithAccessModifiers() {
-//
-//	}
-	
-	private ConstructorWithAccessModifiers(int a) {
-
-	}
-
-	public static void main(String[] args) {
-		ConstructorWithAccessModifiers obj = new ConstructorWithAccessModifiers();
-		ConstructorWithAccessModifiers obj1 = new ConstructorWithAccessModifiers(10);
-	}
 }

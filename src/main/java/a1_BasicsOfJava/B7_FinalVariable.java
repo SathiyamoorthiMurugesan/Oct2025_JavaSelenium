@@ -1,7 +1,10 @@
 package a1_BasicsOfJava;
 
-public class B7FinalVariable {
+public class B7_FinalVariable {
 
+//	int bb;
+//	static int cc;
+	
 	int b = 20; // class level non-static variable
 	static int c = 30; // class level stataic variable
 	
@@ -22,7 +25,7 @@ public class B7FinalVariable {
 //		* But when a variable is declared as a final, then we can not change the value of the variable
 
 	public static void main(String[] args) {
-		B7FinalVariable finalVariableDemo = new B7FinalVariable();
+		B7_FinalVariable finalVariableDemo = new B7_FinalVariable();
 		finalVariableDemo.localVariable();
 		finalVariableDemo.nonStaicVariable();
 		staticVariable();

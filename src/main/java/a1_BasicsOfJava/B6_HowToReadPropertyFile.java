@@ -9,7 +9,7 @@ import java.util.Properties;
 // * Use of // in path variable
 // * Make the path as a generic path
 
-public class B6HowToReadPropertyFile {
+public class B6_HowToReadPropertyFile {
 
 		public static void main(String[] args) throws IOException { 
 //			String filePath = "C:\Users\LENOVO\git\Oct2025_JavaSelenium\TeamPlayers.properties";

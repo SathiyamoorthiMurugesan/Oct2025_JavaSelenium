@@ -21,7 +21,7 @@ public class B9ConstructorWithFinal {
 	 */
 
 	public final int a = 20;
-	public final int b;
+	final int b;
 
 	public B9ConstructorWithFinal() {
 		b = 20;

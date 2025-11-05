@@ -24,7 +24,7 @@ import java.io.FileReader;
 
 //so, we will create a object to the class 'FileInputStream' to access the non-static methods presents in that class
 
-public class Test_HowToReadPropertyFile {
+public class Test_B5_HowToReadPropertyFile {
 
 	public static void main(String[] args) throws IOException {    //adding IOException for FileInputStream
 

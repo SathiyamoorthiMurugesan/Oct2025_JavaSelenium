@@ -1,13 +1,13 @@
 package testPractice_Java;
 //Here we are passing a class/ interface as a parameter to the method
 
-public class Test_ClassorInterfaceAsParameter {
+public class Test_B4_ClassorInterfaceAsParameter {
 int a = 10;  //a is a non-static variable which is declared and initialized
 
-Test_ClassorInterfaceAsParameter AAA;
+Test_B4_ClassorInterfaceAsParameter AAA;
 	
 	public static void main(String[] args) {
-		Test_ClassorInterfaceAsParameter obj = new Test_ClassorInterfaceAsParameter();
+		Test_B4_ClassorInterfaceAsParameter obj = new Test_B4_ClassorInterfaceAsParameter();
 		ClassAsParameter obj2 = new ClassAsParameter();
 
 		method1(obj.a);  //calling static method in a static way. but 'a' is non-static variable. so we are calling it using obj

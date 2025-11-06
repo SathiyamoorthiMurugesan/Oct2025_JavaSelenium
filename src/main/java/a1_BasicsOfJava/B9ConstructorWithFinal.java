@@ -20,19 +20,23 @@ public class B9ConstructorWithFinal {
 	 * 
 	 */
 
-	public final int a = 20;
+	public final int aa = 20;
+	public final int a;
 	final int b;
 
 	public B9ConstructorWithFinal() {
+		a = 0;
 		b = 20;
 //		b = 21;
 	}
 
-	public B9ConstructorWithFinal(int a) {
+	public B9ConstructorWithFinal(int abc) {
+		a = 0;
 		b = 200;
 	}
 
 	public B9ConstructorWithFinal(char a) {
+		this.a = 0;
 		b = 100;
 	}
 

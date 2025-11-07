@@ -1,6 +1,6 @@
 package a3_InterfaceInDetail;
 
-public interface A6NestedInterface {
+public interface A6_NestedInterface {
 	
 //	WebDriver
 	

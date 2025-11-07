@@ -10,7 +10,6 @@ package a3_InterfaceInDetail;
 // We can not create variables or methods with protected or private access modifiers
 // private - we can use it only inside that class.protected - protected is also we can use it only in the same class and 
 
-
 // We can not create Object for Interface because it only has Abstract methods. Also we can create object only for classes not for interfaces
 // Interface can not have constructors.
 // If a class wants to inherit the property of an Interface, we need to use "implements" keyword.
@@ -25,77 +24,7 @@ package a3_InterfaceInDetail;
 // We can give an interface as a return type
 // We can create a interface within a interface
 
-public interface A1LearnInterface {
-	
-	
-//	We can not create a method with body in interface (wait but there is some exceptions)
-	
-//	public void methodWithBody() {
-//		
-//	}
-	
-	
-//	In interface we can create only body less method  (wait but there is some exceptions)
-	public void methodWithoutBody(); //non-static method
-	
-	
-	
-//	Methods in Java
-//		* static or non-static 
-//		* parameter or without parameter
-//		* return type or without return type
-	
-	
-//	In interface we can not create static method without body.
-//	static method in interface should have body (exception 1)
-	
-//	public static void methodWithoutBodyStatic();
-	
-	public static void methodWithBodyStatic() {
-		
-	}
-	
-//	parameterized method
-	
-	public void nonStaticMethodWithParameter(int a);
-	
-	public static void staticMethodWithParameter(int a) {
-		
-	}
-	
-//	Return type method
-	
-	public int nonStaticWithReturnType();
-	
-	static public int staticWithReturnType() {
-		return 0;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+public interface A1_LearnInterface {
 	
 	
 }

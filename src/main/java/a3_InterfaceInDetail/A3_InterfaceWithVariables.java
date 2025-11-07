@@ -1,6 +1,6 @@
 package a3_InterfaceInDetail;
 
-public interface A3InterfaceWithVariables {
+public interface A3_InterfaceWithVariables {
 	
 //	We can create variables inside interface ( local, static and non-static)
 //	Local variables are simple and they are not final in nature, means, 

@@ -1,6 +1,6 @@
 package a3_InterfaceInDetail;
 
-public interface A2InterfaceWithMethods {
+public interface A2_InterfaceWithMethods {
 
 //	We can not create a method with body in interface (wait but there is some exceptions)
 	

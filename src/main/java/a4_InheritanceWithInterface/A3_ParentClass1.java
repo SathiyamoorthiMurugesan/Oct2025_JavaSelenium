@@ -1,6 +1,6 @@
 package a4_InheritanceWithInterface;
 
-public class ParentClass1 implements ParentInterface1 {
+public class A3_ParentClass1 implements A1_ParentInterface1{
 
 	public void methodA() {
 		System.out.println("I am non-static method from ParentClass1");

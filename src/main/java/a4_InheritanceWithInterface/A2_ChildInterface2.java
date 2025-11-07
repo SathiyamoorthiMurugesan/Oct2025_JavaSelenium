@@ -1,6 +1,6 @@
 package a4_InheritanceWithInterface;
 
-public interface ChildInterface2 extends ParentInterface1 {
+public interface A2_ChildInterface2 extends A1_ParentInterface1 {
 	
 	public void method11();
 	

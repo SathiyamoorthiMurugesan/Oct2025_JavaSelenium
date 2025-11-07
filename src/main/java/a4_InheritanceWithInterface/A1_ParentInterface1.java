@@ -1,6 +1,6 @@
 package a4_InheritanceWithInterface;
 
-public interface ParentInterface1 {
+public interface A1_ParentInterface1 {
 	
 	public void method1();
 	

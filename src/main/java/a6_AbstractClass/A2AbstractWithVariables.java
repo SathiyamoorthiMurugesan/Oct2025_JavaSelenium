@@ -22,6 +22,7 @@ public class A2AbstractWithVariables {
 //	final private int bbb;
 //	final protected int ccc;
 //	final int ddd;
+//	When we have written the constructor explicitly, we can declare final variables without initiating it on class level
 	
 	final public int aaa = 10;
 	final private int bbb = 20;

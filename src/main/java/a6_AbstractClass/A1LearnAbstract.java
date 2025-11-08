@@ -8,7 +8,7 @@ public class A1LearnAbstract {
 	 * It is not mandatory to have an abstract method in an Abstract class
 	 * We can create either abstract methods or concrete methods or both the methods in abstract Class.
 	 * In normal class, we can not create  abstract methods
-	 * The moment we create an abstract method in a class, the class will be converted into abstract Class
+	 * The moment we create an abstract method in a normal class, the class will be converted into abstract Class
 	 * We can not create object for abstract class. Because abstract Class may have abstract methods alone and 
 	 * 		in that situation, object creation is useless
 	 * Whenever, a Class, follows(extends) an abstract class, it will prompt to implement the unimplemented methods
@@ -22,6 +22,7 @@ public class A1LearnAbstract {
 	 * 	2) using that abstract class name, you can call the static method of the abstract class
 	 * You can also create any kind of variables in abstract class
 	 * You can not create abstract static method 
+	 * Abstract class does not have any constructor
 	 */
 	
 

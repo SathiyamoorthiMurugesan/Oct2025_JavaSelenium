@@ -54,3 +54,62 @@ public abstract class A3AbstractWithAccessModifiers {
 	
 
 }
+
+class TestAbs {
+	
+	public static void main(String[] args) {
+//		We can not create object for an Abstract class, so we can not call/use the non-static members of the abstract class in some unknown class
+//		A3AbstractWithAccessModifiers obj = new A3AbstractWithAccessModifiers();
+		
+		
+//		calling the static methods
+		
+		A3AbstractWithAccessModifiers.methodA();
+//		A3AbstractWithAccessModifiers.methodB();
+		A3AbstractWithAccessModifiers.methodC();
+		A3AbstractWithAccessModifiers.methodD();
+		
+	}
+}
+
+class ChildAbs extends A3AbstractWithAccessModifiers {
+
+	@Override
+	public void method11() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void method33() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	void method44() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public static void main(String[] args) {
+		ChildAbs obj = new ChildAbs();
+		obj.method1();
+//		obj.method2();
+		obj.method3();
+		obj.method4();
+		
+		obj.method11();
+//		obj.method22();
+		obj.method33();
+		obj.method44();
+		
+//		calling the static methods
+		
+		A3AbstractWithAccessModifiers.methodA();
+//		A3AbstractWithAccessModifiers.methodB();
+		A3AbstractWithAccessModifiers.methodC();
+		A3AbstractWithAccessModifiers.methodD();
+	}
+	
+}

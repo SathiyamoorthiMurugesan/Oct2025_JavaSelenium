@@ -1,8 +1,8 @@
 package b5overloading;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+//import org.openqa.selenium.By;
+//import org.openqa.selenium.WebDriver;
+//import org.openqa.selenium.chrome.ChromeDriver;
 
 
 public class A2OverloadingDemo2 {
@@ -88,9 +88,9 @@ public class A2OverloadingDemo2 {
 		od.buySoap(20, "Lux");
 		od.buySoap("Lux", 100);
 		
-		WebDriver driver = new ChromeDriver();
-		driver.findElement(By.id(""));
-		driver.findElement(By.xpath(""));
+//		WebDriver driver = new ChromeDriver();
+//		driver.findElement(By.id(""));
+//		driver.findElement(By.xpath(""));
 		
 	}
 

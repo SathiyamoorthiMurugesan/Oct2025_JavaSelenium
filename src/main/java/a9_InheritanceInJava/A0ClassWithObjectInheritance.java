@@ -1,4 +1,4 @@
-package a9InheritanceInJava;
+package a9_InheritanceInJava;
 
 public class A0ClassWithObjectInheritance {
 //public class A0ClassWithObjectInheritance extends Object {

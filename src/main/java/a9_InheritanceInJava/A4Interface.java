@@ -1,5 +1,6 @@
-package a9InheritanceInJava;
+package a9_InheritanceInJava;
 
+// Interface follows a interface
 public interface A4Interface extends A2InheritanceInterface {
 	
 	int a4 = 100;

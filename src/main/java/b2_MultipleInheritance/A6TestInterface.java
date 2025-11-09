@@ -1,4 +1,4 @@
-package b2MultipleInheritance;
+package b2_MultipleInheritance;
 
 //public interface A6TestInterface {
 //public interface A6TestInterface extends A1Interface {

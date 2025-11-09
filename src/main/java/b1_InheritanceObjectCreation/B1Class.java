@@ -1,4 +1,4 @@
-package b1InheritanceObjectCreation;
+package b1_InheritanceObjectCreation;
 
 //Object Creation or Object instatiation
 //	eg: B2Class obj = new B2Class();
@@ -41,13 +41,17 @@ public class B1Class {
 	public static void main(String[] args) {
 
 	}
+	
+	public void methodA() {
+		System.out.println("I am methodA() from parent class");
+	}
 
 	public void methodB11() {
-		System.out.println("I am non-static method from B1Class");
+		System.out.println("I am non-static method from parent B1Class");
 	}
 
 	public static void methodB12() {
-		System.out.println("I am static method from B1Class");
+		System.out.println("I am static method from parent B1Class");
 	}
 
 }
@@ -59,25 +63,38 @@ class B2Class extends B1Class {
 
 	public static void main(String[] args) {
 
-		B2Class obj = new B2Class();
+//		Object creation - Type 1
+		B2Class obj = new B2Class(); 
 		obj.methodB11();
 		obj.methodB21();
+		obj.methodA();
 		
-		
+//		Object creation - Type 2
 		B1Class obj1 = new B2Class();
 		obj1.methodB11();
+		obj1.methodA(); // Override happens here because of the object creation
 		
-		
+//		Object creation - Type 3
 		B1Class obj2 = new B1Class();
 		obj2.methodB11();
+		obj2.methodA();
 		
+	}
+	
+	public void methodA() {
+		System.out.println("I am methodA() from parent class but overridden in child class");
 	}
 
 	public void methodB21() {
-		System.out.println("I am non-static method from B1Class");
+		System.out.println("I am non-static method from child B2Class");
 	}
 
 	public static void methodB22() {
-		System.out.println("I am static method from B1Class");
+		System.out.println("I am static method from child B2Class");
 	}
 }
+
+//Home work
+
+//Object creation with parent interface and child class 
+//Object creation with parent abstract class and child class

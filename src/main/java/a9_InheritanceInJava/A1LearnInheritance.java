@@ -1,4 +1,4 @@
-package a9InheritanceInJava;
+package a9_InheritanceInJava;
 
 public class A1LearnInheritance {
 	
@@ -59,9 +59,9 @@ public class A1LearnInheritance {
 //	Public class Test1 implements abc1, abc2 extends Test2; NOT POSSIBLE
 
 //	Diamond problem
-//		ClassA extends ClassB
-//		ClassB extends ClassC
+//		ClassB extends ClassA
 //		ClassC extends ClassA
+//		ClassD extends ClassB, ClassC
 	
 //	Where do we use multiple inheritance
 //		public class ArrayList<E> extends AbstractList<E> implements List<E>, RandomAccess, Cloneable, java.io.Serializable (java example)

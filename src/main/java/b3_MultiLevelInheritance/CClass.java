@@ -1,4 +1,4 @@
-package b3MultiLevelInheritance;
+package b3_MultiLevelInheritance;
 
 public class CClass extends BClass {
 	int cA = 10;

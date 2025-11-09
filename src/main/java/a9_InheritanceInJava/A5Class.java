@@ -1,5 +1,6 @@
-package a9InheritanceInJava;
+package a9_InheritanceInJava;
 
+// class follows another class
 public class A5Class extends A3Class {
 	
 	public void testMethod11() {

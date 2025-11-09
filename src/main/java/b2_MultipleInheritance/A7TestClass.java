@@ -1,4 +1,4 @@
-package b2MultipleInheritance;
+package b2_MultipleInheritance;
 
 public class A7TestClass implements A1Interface, A2Interface, A3Interface {
 

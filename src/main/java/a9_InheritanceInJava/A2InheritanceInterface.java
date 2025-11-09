@@ -1,4 +1,4 @@
-package a9InheritanceInJava;
+package a9_InheritanceInJava;
 
 public interface A2InheritanceInterface {
 	

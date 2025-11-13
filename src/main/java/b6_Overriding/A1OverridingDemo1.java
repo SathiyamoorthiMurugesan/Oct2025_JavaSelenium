@@ -1,4 +1,4 @@
-package b6Overriding;
+package b6_Overriding;
 
 //	* Also called as runtime polymorphism and it happens between two classes
 //	* In order to achieve this, we need to use inheritance concept and object creation 

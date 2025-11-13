@@ -1,4 +1,4 @@
-package b8ThisKeywordInJava;
+package b8_ThisKeywordInJava;
 
 public class D2SuperMethodPractice extends Parent_SMP {
 
@@ -9,14 +9,15 @@ public class D2SuperMethodPractice extends Parent_SMP {
 
 	public D2SuperMethodPractice(int a) {
 //		super();
-//		super(a);
-//		super('a');
+//		super(100);
+		super('a');
 		System.out.println("I am child class int parameterized constructor");
 	}
 	
 	public D2SuperMethodPractice(String str) {
 //		super();
-		this(10);
+//		super(10);
+		this();
 		System.out.println("I am child class String parameterized constructor");
 	}
 
@@ -28,12 +29,12 @@ public class D2SuperMethodPractice extends Parent_SMP {
 //		obj1.method1();
 		
 		D2SuperMethodPractice obj2 = new D2SuperMethodPractice("abc");
-		obj2.method1();
+//		obj2.method1();
 	}
 
-	public void method1() {
-		System.out.println("I am method1 from child class");
-	}
+//	public void method1() {
+//		System.out.println("I am method1 from child class");
+//	}
 
 }
 

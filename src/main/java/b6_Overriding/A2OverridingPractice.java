@@ -1,4 +1,4 @@
-package b6Overriding;
+package b6_Overriding;
 
 public class A2OverridingPractice extends Parent {
 	

@@ -3,10 +3,10 @@
 //* Constructor should not have any return type
 //* Constructor can be parameterized or non parameterized (Overloading)
 //* Constructor belongs to the class
+//* Each class have its own constructor(default constructor) and it is hidden always (means implicitly available)
 //* We can create variables inside Constructor(local variable). 
 //* We can call Class level variables(either static or non-static) and methods(either static or non-static) inside Constructor by without creating object inside Constructor 
 //* Constructor used to assign values to instance variables, especially when they are private or final
-//* Each class have its own constructor(default constructor) and it is hidden always (means implicitly available)
 //* Whenever we create object for a class, after copying non static variables and methods, default constructor will always run;
 //		* Since default constructor is implicit and does not have anything in it, we dont see it running
 //		* If we explicitly put something in default constructor, while object creation, we can see it running
@@ -57,7 +57,7 @@
 
 //* Explicitly writing default constructor is called overriding.
 
-package b9Constructor;
+package b9_Constructor;
 
 public class ConstructorDemo {
 	

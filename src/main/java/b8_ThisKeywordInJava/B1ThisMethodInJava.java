@@ -1,6 +1,8 @@
-package b8ThisKeywordInJava;
+package b8_ThisKeywordInJava;
 
 //**********this()************************
+
+//this-of
 
 //* We can use this(), to call a constructor from any constructors within a class.
 //* this() should be used within a constructor only. Means, we can not use it in methods.
@@ -11,6 +13,4 @@ package b8ThisKeywordInJava;
 
 //* We can pass variable name inside this() but the variable should be static.
 
-public class B1ThisMethodInJava {
-
-}
+public class B1ThisMethodInJava {}

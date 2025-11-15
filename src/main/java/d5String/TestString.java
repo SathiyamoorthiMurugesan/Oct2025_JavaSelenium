@@ -1,7 +1,5 @@
 package d5String;
 
-import array.ArrayLearning;
-
 public class TestString {
 
 	/**

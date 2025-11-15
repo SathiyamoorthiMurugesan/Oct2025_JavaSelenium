@@ -8,12 +8,12 @@ public class D2SuperMethodPractice extends Parent_SMP {
 	}
 
 	public D2SuperMethodPractice(int a) {
-//		super();
+		// super();
 //		super(100);
 		super('a');
 		System.out.println("I am child class int parameterized constructor");
 	}
-	
+
 	public D2SuperMethodPractice(String str) {
 //		super();
 //		super(10);
@@ -24,10 +24,10 @@ public class D2SuperMethodPractice extends Parent_SMP {
 	public static void main(String[] args) {
 //		D2SuperMethodPractice obj = new D2SuperMethodPractice();
 //		obj.method1();
-		
+
 //		D2SuperMethodPractice obj1 = new D2SuperMethodPractice(10);
 //		obj1.method1();
-		
+
 		D2SuperMethodPractice obj2 = new D2SuperMethodPractice("abc");
 //		obj2.method1();
 	}
@@ -47,7 +47,7 @@ class Parent_SMP {
 	public Parent_SMP(int a) {
 		System.out.println("I am parent class int parameterized constructor");
 	}
-	
+
 	public Parent_SMP(char a) {
 		System.out.println("I am parent class char parameterized constructor");
 	}

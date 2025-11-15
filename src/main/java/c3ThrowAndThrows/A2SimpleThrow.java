@@ -16,6 +16,6 @@ public class A2SimpleThrow {
 	public static void main(String[] args) throws  Exception {
 //	public static void main(String[] args) throws IOException, Exception {
 		A1ThrowsDemo obj = new A1ThrowsDemo();
-		obj.methodB();
+		//obj.methodB();
 	}
 }

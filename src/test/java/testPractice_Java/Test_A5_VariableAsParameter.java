@@ -1,9 +1,9 @@
 package testPractice_Java;
 
-//parameter - we can pass multiple parameters inside the method. passing variables as a parameter
-//Argument - variable name is called as an argument
+//parameter - we can pass multiple parameters inside the method. passing variables as a parameter. means variable name with data type.
+//Argument - It is the actual values that we are passing to the parameter. Means variable value
 
-//example: method1(String abc) - string is a parameter and abc is an argument
+//example: method1(String abc) - string abc is a parameter and the value we are giving to it is an argument
 
 //* Parameterized variables are considered as local variables.
 

@@ -39,8 +39,9 @@
 //	8) try should not be alone, it should be associated with either catch or finally or catches or catch AND finally or catches  AND finally.
 
 //* Exception Hirarchy: https://www.javatpoint.com/exception-handling-in-java
+//https://www.javastudypoint.com/2019/01/exception-handling-in-java.html
 
-package c2ExceptionLearning;
+package c2_ExceptionLearning;
 
 public class A2ErrorsAndException {
 

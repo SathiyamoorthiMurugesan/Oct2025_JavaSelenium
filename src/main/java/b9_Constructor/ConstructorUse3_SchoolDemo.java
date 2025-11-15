@@ -38,6 +38,8 @@ public class ConstructorUse3_SchoolDemo {
 				.println(student2.rollNo + "   " + student2.name + "   " + student2.age + "     " + student2.standard);
 
 		ConstructorUse3_SchoolDemo student3 = new ConstructorUse3_SchoolDemo("3", "C", "11", "IV std");
+		System.out.println(student3.name);
+		System.out.println(student3.rollNo);
 		ConstructorUse3_SchoolDemo student4 = new ConstructorUse3_SchoolDemo("4", "D", "10");
 
 	}

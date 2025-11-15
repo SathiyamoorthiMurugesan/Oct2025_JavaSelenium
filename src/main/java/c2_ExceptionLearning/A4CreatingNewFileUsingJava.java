@@ -1,4 +1,4 @@
-package c2ExceptionLearning;
+package c2_ExceptionLearning;
 
 import java.io.File;
 import java.io.FileInputStream;

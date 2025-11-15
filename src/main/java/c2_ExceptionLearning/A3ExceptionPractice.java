@@ -1,4 +1,4 @@
-package c2ExceptionLearning;
+package c2_ExceptionLearning;
 
 public class A3ExceptionPractice {
 	

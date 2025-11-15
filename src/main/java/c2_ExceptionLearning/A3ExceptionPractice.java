@@ -101,14 +101,14 @@ public class A3ExceptionPractice {
 		
 //		***************** try and parent catch *********************
 //		
-		try {
-			c = a/b;
-		}
-		
-		catch(Exception e) {
-			System.out.println("Catched Exception");
-			System.out.println(e.getMessage());
-		}
+//		try {
+//			c = a/b;
+//		}
+//		
+//		catch(Exception e) {
+//			System.out.println("Catched Exception");
+//			System.out.println(e.getMessage());
+//		}
 		
 //		catch(NullPointerException e) {
 //			System.out.println("Catched Null pointer exception");

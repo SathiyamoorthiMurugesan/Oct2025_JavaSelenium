@@ -1,13 +1,3 @@
-//* Error - If error happens, execution will stop. Errors should not be handled, it should be fixed.  
-//		* Errors can be runtime error, or compile time error.
-//		* Complile time error - if we do not follow java coding standards we get compile time error. 
-//			* IDE itself let us know the errors while writing
-//			* Only after fixing it, we can run the code 
-//			* eg: declaring a variable without data type. 
-//		* Run time error - It does not captured during compile time. 
-//			* eg: trying to run a code without main method
-//			* trying to get string value from a numeric cell of an excel 
-
 //* Exception - An exception is an unwanted or unexpected event, which occurs during the execution of a program; 
 //* i.e at run time, Exception disrupts the normal flow of the program�s instructions.
 //		* If Exception is not handled, program will not continue.
@@ -49,9 +39,9 @@ public class A2ErrorsAndException {
 		A2ErrorsAndException obj = new A2ErrorsAndException();
 //		obj.method1(10, 0);
 		System.out.println("Hello");
-//		ErrorsAndException obj1 = new ErrorsAndException();
+//		A2ErrorsAndException obj1 = new A2ErrorsAndException();
 //		
-////		obj.method1(10, 0);
+//		obj.method1(10, 0);
 //		
 		try {
 			obj.method1(10, 0);

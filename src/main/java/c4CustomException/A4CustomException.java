@@ -44,7 +44,7 @@ public class A4CustomException extends Exception {
 		}
 		
 		if(a>0 && a<100) {
-			throw new A4CustomException(10);
+			throw new A4CustomException(11);
 		}
 	}
 

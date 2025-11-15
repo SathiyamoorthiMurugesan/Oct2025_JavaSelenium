@@ -19,5 +19,10 @@ public class A3ThrowRunTimeExceptions {
 
 		throw new ArithmeticException();
 	}
+	
+//	public static void main(String[] args) throws IOException {
+//
+//		throw new IOException();
+//	}
 
 }

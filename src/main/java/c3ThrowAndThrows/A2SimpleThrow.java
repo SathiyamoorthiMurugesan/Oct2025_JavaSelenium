@@ -13,9 +13,9 @@ public class A2SimpleThrow {
 		throw new IOException();
 	}
 	
-	public static void main(String[] args) throws  Exception {
+	public static void main(String[] args) throws IOException {
 //	public static void main(String[] args) throws IOException, Exception {
-		A1ThrowsDemo obj = new A1ThrowsDemo();
-		//obj.methodB();
+		A2SimpleThrow obj = new A2SimpleThrow();
+		obj.methodB();
 	}
 }

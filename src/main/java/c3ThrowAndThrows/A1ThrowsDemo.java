@@ -16,6 +16,33 @@
 //		Similarly, only this class or one of its subclasses can be the argument type in a catch clause.
 
 
+//⭐ Golden Rule
+//	* Use throw to report problems.
+//	* Use try–catch to handle problems.
+
+//Use						Meaning
+//throw		To create/raise an exception when method cannot continue
+//try–catch	To handle an exception and prevent program crash
+
+//************************************************************************************
+
+//When to use throw?
+//
+//Use throw when you want to create (raise) an exception yourself.
+//✔ You use throw inside a method
+//		To signal that something is wrong
+//		To stop the method execution immediately
+//		To tell the caller that they passed wrong data
+
+//************************************************************************************
+
+//When to use try–catch?
+//
+//Use try–catch when you want to handle the exception and continue the program instead of crashing.
+//✔ Use try–catch when:
+//		You know how to fix the issue
+//		Or you want to display a proper message
+//		Or you want a fallback mechanism
 
 package c3ThrowAndThrows;
 

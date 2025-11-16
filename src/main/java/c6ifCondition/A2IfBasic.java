@@ -6,7 +6,7 @@ public class A2IfBasic {
 //	if(condition) {
 //	}
 	
-//	condition - comparision which gives us either true or false 
+//	condition - comparison which gives us either true or false 
 	
 //	Single and multiple if
 

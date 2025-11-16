@@ -1,5 +1,13 @@
 package test_ExceptionHandling;
 
+/*When to use try–catch?
+==================================================================================================
+	Use try–catch when you want to handle the exception and continue the program instead of crashing.
+		✔ Use try–catch when:
+				* You know how to fix the issue
+				* Or you want to display a proper message
+				* Or you want a fallback mechanism */
+
 public class TryCatchPractice {
 
 	public static void main(String[] args) {
@@ -11,6 +19,8 @@ public class TryCatchPractice {
 		// at test_ExceptionHandling.TryCatchPractice.main(TryCatchPractice.java:7)
 
 //so, we are handling this error using try-catch block
+		
+
 
 		try {
 			obj.methodA(2, 0);

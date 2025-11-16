@@ -1,5 +1,7 @@
 package c3ThrowAndThrows;
 
+import java.io.IOException;
+
 public class A3ThrowRunTimeExceptions {
 	
 //	How do we handle run time exception 

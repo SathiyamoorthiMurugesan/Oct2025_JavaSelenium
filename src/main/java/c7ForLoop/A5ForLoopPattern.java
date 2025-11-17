@@ -7,11 +7,12 @@ public class A5ForLoopPattern {
 			for (int j = 1; j <= 5; j++) {
 				if (i == j) {
 					System.out.print(j);
-					break;
+					break;   //it will stop the inner for loop, once the if condition is met
 				} else
-					System.out.print(" ");
+					System.out.print("-");
 			}
 			System.out.println();
 		}
 	}
 }
+

@@ -24,6 +24,40 @@ statements..
 //Exit loop
 //End program
 
+
+/*
+ * Parent for loop controls -> rows
+ * Child for loop controls -> columns
+ */
+
+
+
+/*📌 Simple rule to remember
+===============================
+Variable	Declared in 	Available in which scope?
+i	        Parent loop	    Inside parent loop + child loop
+j	        Child loop	     Only inside child loop
+
+Why we can't use the loop variable outside?
+================================================
+     Java follows block scope:
+     A variable declared inside { } is accessible only inside those { }.
+
+But we can use the loop variable outside the loop, only if it is declared in class level
+*/
+
+/*
+ Where and when to use 'break'?
+ ============================================
+break is used to stop the loop immediately.
+
+Use it when:
+     You found what you are searching for
+     You want to exit the loop early
+     You want to stop a child loop inside a nested loop
+Example (exit child loop when j == i)
+*/
+
 public class ForLoopBasic {
 
 	public static void main(String[] args) {

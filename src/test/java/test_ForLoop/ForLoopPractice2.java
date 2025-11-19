@@ -5,12 +5,12 @@ public class ForLoopPractice2 {
 	//static int i;
 
 	public static void main(String[] args) {
-//		for (int i = 1; i <= 5; i++) {          // parent → rows
-//		    for (int j = 1; j <= 5; j++) {      // child → columns
-//		        System.out.print(j + " ");
-//		    }
-//		    System.out.println();               // move to next line
-//		}
+		for (int i = 1; i <= 5; i++) {          // parent → rows
+		    for (int j = 1; j <= 5; j++) {      // child → columns
+		        System.out.print(j + " ");
+		    }
+		    System.out.println();               // move to next line
+		}
 		
 //		for (i = 1; i <= 5; i++) {
 //		    for (int j = 1; j <= 5; j++) {
@@ -26,12 +26,12 @@ public class ForLoopPractice2 {
 		 
 		
 //right angle triangle	
-		for(int i=5;i>=1;i--) {           //i = row number
-			for(int j=1; j<=i; j++) {     //Row number and star number is same in each row. so loop must run i times
-				System.out.print("*");
-			}
-			System.out.println();
-		}
+//		for(int i=5;i>=1;i--) {           //i = row number
+//			for(int j=1; j<=i; j++) {     //Row number and star number is same in each row. so loop must run i times
+//				System.out.print("*");
+//			}
+//			System.out.println();
+//		}
 		
 //pyramid pattern
 		
@@ -59,20 +59,20 @@ public class ForLoopPractice2 {
 
 //right diagonal
 		
-//		for(int i=1; i<=5;i++) {
-//			for(int j=1; j<=5;j++) {
-//				if(j==i) {
-//				System.out.print("*");
-//				break;
-//				}
-//				else {
-//					System.out.print(" ");
-//					}
-//			}
-//			System.out.println();
-//		}
+		for(int i=1; i<=5;i++) {
+			for(int j=1; j<=5;j++) {
+				if(j==i) {
+				System.out.print("*");
+				break;
+				}
+				else {
+					System.out.print(" ");
+					}
+			}
+			System.out.println();
+		}
 		
-//left diagonal
+//left diagonal       //break statement will break the inner for loop once the condition is satisfied.
 		
 //		for(int i=5; i>=1;i--) {
 //		for(int j=1; j<=5;j++) {

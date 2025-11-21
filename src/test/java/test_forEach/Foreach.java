@@ -1,3 +1,4 @@
+package test_forEach;
 
 public class Foreach {
 

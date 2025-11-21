@@ -28,4 +28,10 @@ public class A2Class implements A1Interface {
 		
 	}
 
+	@Override
+	public void methodC() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

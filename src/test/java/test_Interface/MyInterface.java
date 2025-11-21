@@ -75,11 +75,11 @@ public interface MyInterface {
 
 	void method4(); // default(implicit) method should be a abstract method
 
-	private int method5() { // private method should have body
-		System.out.println("Private method from MyInterface ");
-		return 0;
-
-	}
+//	private int method5() { // private method should have body
+//		System.out.println("Private method from MyInterface ");
+//		return 0;
+//
+//	}
 
 	public static void main(String args[]) {
 
@@ -115,7 +115,7 @@ class MyClassA implements MyInterface { // Parent of MyClassA is MyInterface
 
 	}
 
-	class ClassB implements Interface2 {
+	static class ClassB implements Interface2 {
 		public static void main(String args[]) {
 
 			MyClassA obj = new MyClassA(); // creating obj for MyClassA which implements the parent Interface

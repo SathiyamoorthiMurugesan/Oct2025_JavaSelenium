@@ -29,9 +29,7 @@ public interface A4_InterfaceWithAccessModifiers {
 //		
 //	}
 
-	private void method20() {
-
-	}
+	void method20();
 
 //	protected void method30() {
 //		

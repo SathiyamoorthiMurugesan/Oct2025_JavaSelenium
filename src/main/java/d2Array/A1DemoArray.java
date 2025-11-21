@@ -49,9 +49,9 @@ public class A1DemoArray {
 		
 //		obj.cloneIntArray(obj.arr1);
 		
-//		obj.getIntArrayFromUser();
+		obj.getIntArrayFromUser();
 		
-		obj.getIntArrayFromUserAndReturnAnIndexValue(3, 3);
+//		obj.getIntArrayFromUserAndReturnAnIndexValue(3, 3);
 		
 	}
 	

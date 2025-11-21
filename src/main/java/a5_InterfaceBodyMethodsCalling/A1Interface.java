@@ -10,7 +10,7 @@ public interface A1Interface {
 		System.out.println("I am static method from A1Interface");
 	}
 	
-	private void methodC() {
+	default void methodC() {
 		System.out.println("I am private method from A1Interface");
 	}
 	

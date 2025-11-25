@@ -81,9 +81,9 @@ public class TestString {
 		
 		String upper = str.toUpperCase();
 		
-//		boolean test = upper.equals("Sathya");
+		boolean test = upper.equals("Sathya");
 		
-		boolean test = str.toUpperCase().equals("Sathya");
+		boolean test1 = str.toUpperCase().equals("Sathya");
 		
 		String aaa = "Sathya    ";
 		System.out.println(aaa);

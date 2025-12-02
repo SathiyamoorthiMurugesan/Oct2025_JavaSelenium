@@ -18,6 +18,8 @@ public class ThreadPractice extends Thread {
 
 		ThreadPractice p = new ThreadPractice();
 		p.start();
+//		Causes this thread to begin execution; the Java Virtual Machinecalls the run method of this thread. 
+
 		
 		try {
 			p.join();

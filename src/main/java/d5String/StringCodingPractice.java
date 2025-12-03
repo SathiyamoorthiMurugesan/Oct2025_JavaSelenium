@@ -2,7 +2,7 @@ package d5String;
 
 public class StringCodingPractice {
 
-	public static void main3(String[] args) {
+	public static void main(String[] args) {
 
 //		Count each word/number 
 
@@ -32,7 +32,7 @@ public class StringCodingPractice {
 
 	}
 
-	public static void main(String[] args) {
+	public static void main3(String[] args) {
 
 //		Count each word/number 
 
@@ -63,7 +63,7 @@ public class StringCodingPractice {
 
 	}
 
-	public static void main1(String[] args) {
+	public static void main4(String[] args) {
 
 //		Count each word/number 
 

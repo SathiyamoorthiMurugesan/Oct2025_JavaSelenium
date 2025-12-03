@@ -17,12 +17,12 @@ public class InterviewQuestionsPracticeString {
 //		obj.upperLowerCase("Apple Beetroot Carrot");
 //		obj.countVowels("elephant");
 //		obj.removeSpace("Welcome to Java Programming");
-//		obj.reverseString("Pradeepa");
+		obj.reverseString("Pradeepa");
 //		obj.reverseStringwithoutArray("pradeepa");
 //		obj.palindrome("madam");
 //		obj.splitSentence("SSM Institute Of Engineering and Technology");
 //		obj.stringToArray("Dindigul");
-		obj.countDigitLettersChars("mpradeepa000@gmail.com");
+//		obj.countDigitLettersChars("mpradeepa000@gmail.com");
 	}
 
 //	write a method to get each char from the given String
@@ -214,6 +214,7 @@ public class InterviewQuestionsPracticeString {
 		System.out.println("SpclChars: " + spclchar);
 
 	}
+	
 	
 	
 }

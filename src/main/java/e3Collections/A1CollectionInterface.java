@@ -59,10 +59,10 @@
 //	* 
 //5) List Interface
 //	* It extends Collection interface
-//	* Its an ordered collection, which means we can find any element using the index
+//	* Its an ORDERED collection, which means we can find any element using the index
 //	* LIST ALLOWS DUPLICATES 
 //	* Classes which extends List Interface are ArrayList, LinkedList, Vector
-//	* Allows MULTIPLE null elements
+//	* Allows MULTIPLE NULL elements
 //	* Useful methods 
 //	* 	includes all the methods in Collection interface
 //	* 	sort(Comparator<? super E> c)
@@ -82,7 +82,7 @@
 //	* 	of(E... elements)
 //	* 	
 //6) Set Interface
-//	* Its an un-ordered collection
+//	* Its an UN-ORDERED collection
 //	* DOES NOT ALLOW DUPLICATE ELEMENTS
 //	* Only one Null is allowed
 //	* Classes which extends SET Interface are HashSet, LinkedHashSet, TreeSet(Also implements SortedSet)

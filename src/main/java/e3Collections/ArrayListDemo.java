@@ -118,7 +118,7 @@ package e3Collections;
 //import java.util.ArrayList;
 import java.util.*;
 
-import array.DemoArray;
+//import array.DemoArray;
 
 public class ArrayListDemo {
 

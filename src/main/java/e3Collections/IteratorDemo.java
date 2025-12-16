@@ -6,6 +6,8 @@ import java.util.ListIterator;
 import java.util.Spliterator;
 
 public class IteratorDemo {
+	
+//	Collections
 
 	static Integer a;
 	public static void  iteratorMethod() {

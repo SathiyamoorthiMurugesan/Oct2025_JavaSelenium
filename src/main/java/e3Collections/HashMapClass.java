@@ -70,7 +70,7 @@ public class HashMapClass {
 		marks.put("Chemistry", 75);
 		marks.put("Maths", 95);
 
-		System.out.println(marks);
+		System.out.println("My Map values are " +marks);
 
 		Map<String, Integer> marks10 = new HashMap<String, Integer>();
 		marks10.putAll(marks);
@@ -87,7 +87,7 @@ public class HashMapClass {
 			System.out.println(each);
 		}
 		
-		System.out.println("iterator");
+		System.out.println("************ using iterator to Iterate the map********");
 		Set<Entry<String, Integer>>  entrySet = marks.entrySet();
 //		entrySet.get();
 		Iterator<Entry<String, Integer>>  iterator = entrySet.iterator();
@@ -102,7 +102,8 @@ public class HashMapClass {
 		
 		while(iterator1.hasNext()) {
 			Entry<String, Integer> entry = iterator1.next();
-//			System.out.println(entry.getKey());
+			System.out.println("Getting only the keys");
+			System.out.println(entry.getKey());
 //			System.out.println(entry.getValue());
 //			if(null.getKey())
 			

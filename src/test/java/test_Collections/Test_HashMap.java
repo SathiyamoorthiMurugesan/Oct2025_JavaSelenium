@@ -3,7 +3,9 @@ package test_Collections;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 /*
@@ -80,10 +82,56 @@ public class Test_HashMap {
 		Set<String> str = newScore.keySet(); // This will return set of keys
 		System.out.println(str);
 
-		Collection<Integer> val = newScore.values();  //This will return collection of values
+		Collection<Integer> val = newScore.values(); // This will return collection of values
 		System.out.println(val);
+
+		Set<Entry<String, Integer>> ent = newScore.entrySet();
+		System.out.println(ent);
+
+		System.out.println("********Iterating Key using for each loop**************");
+
+		for (String each : str) {
+			System.out.println(each);
+		}
+
+		System.out.println("********Iterating Value using for each loop**************");
+
+		for (Integer each : val) {
+			System.out.println(each);
+		}
+
+		System.out.println("********Iterating Key- Value using iterator**************");
+
+		// we can't iterate both key and value pair (entryset) using for each loop.
+		// because we can't provide two datatypes in for each.
+		// but we can iterate hash map (Key value pair) using iterator.
+
+		Iterator ite = ent.iterator();
+		while (ite.hasNext()) {
+			System.out.println(ite.next());
+		}
 		
-		System.out.println("***************************");
+		System.out.println("********Iterating Key- Value using Map.Entry**************");
+
+
+		Set<Map.Entry<String, Integer>> map = newScore.entrySet();
+
+		Iterator<Map.Entry<String, Integer>> iter = map.iterator();
+		
+		while(iter.hasNext()) {
+			System.out.println(iter.next());
+		}
+		
+		System.out.println("********Taking respective Value of the given Key by storing the next element in a variable**************");
+		
+		Set<Entry<String, Integer>> entr = newScore.entrySet();
+		Iterator<Entry<String, Integer>>ite2 = entr.iterator();
+		while(ite2.hasNext()) {
+			Entry<String, Integer> nxt = ite2.next();  //storing the next value in a local variable which is having key value pair as entry
+			if(nxt != null && nxt.getKey().equalsIgnoreCase("Pradeepa")) {
+				System.out.println(nxt.getValue());
+			}
+		}
 
 
 	}

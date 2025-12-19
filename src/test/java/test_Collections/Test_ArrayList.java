@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.ListIterator;
 
-import org.apache.poi.util.SystemOutLogger;
-
 /*
  * ArrayList - Class
 * 	It implements List Interface

@@ -18,7 +18,7 @@ public class ExcelFileReading {
 
 	public static void main(String[] args) throws IOException{
 		
-		String filePath = "C:\\Users\\monis\\OneDrive\\Desktop\\ExcelFileReading.xlsx";  
+		String filePath = "A:\\ExcelFile\\BasicDetails.xlsx";  
 		File file = new File(filePath);  //Converts the path into a File object so Java can access the file.
 		FileInputStream inputStream = new FileInputStream(file);
 		

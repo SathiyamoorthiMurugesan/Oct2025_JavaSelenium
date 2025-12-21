@@ -1,0 +1,73 @@
+Website:
+=========
+https://www.lambdatest.com/
+
+Some XPaths:
+===========
+
+//button[text()='Book a Demo']                                     -> Book a Demo
+//button[contains(@class,'demo_header_btn') and text()='Book a Demo']
+
+//img[@role='img']                                                 -> Lambdatest logo
+
+//a[@href='https://accounts.lambdatest.com/login']                 -> Login
+//div[@id='m_class']/preceding-sibling::a
+
+
+//a[@href='https://accounts.lambdatest.com/register'] (or)
+//a[text()='Get Started Free']                                     -> Get Started Free
+
+//div[@class='container_selenium']/div/div
+
+
+//a[contains(@href,'login')]
+
+//div[@id='m_class']/a
+
+//button[text()='Book a Demo']/parent::div
+
+
+/..     -> one step preceding..(means /parent)
+
+//span[text(),'Start free with Google']
+
+//a[@role='link']following::img
+
+//a[text()='Start free with Email' and contains(@href,'register')] 
+
+//span[text()='Start free with Google']
+
+div[contains(@class,'items-center')]/child::span
+
+//img[@loading='eager' and @width='150']
+//button[@aria-label='Menu']/child::img
+
+//img[@alt='Power Your Software Testing with']
+
+//p[text()='Trusted by 2M+ users globally']
+
+//img[@alt='Microsoft']/parent::div
+
+//p[text()='Trusted by 2M+ users globally']/following::img[5]
+
+//div[@class='container__selenium']/child::h2
+
+//h2[text()='AI Agents']
+
+//h2[text()='AI Agents']/following::a[1]
+
+//img[@alt='LambdaTest KaneAI' and contains(@src,'Selected')]
+
+//div[@id='m_class']/following-sibling::a[1]
+
+//span[contains(text()='All rights')]
+
+//svg[@id='embeddedMessagingIconChat']  --won't work..svg will often fail..so use * instead of svg
+
+//*[@id="embeddedMessagingIconChat"]
+
+//img[@alt='GitHub']
+
+//img[@alt='Love']/parent::span
+
+//img[contains(@src,'footer_lambdatest')]/following::a[1]

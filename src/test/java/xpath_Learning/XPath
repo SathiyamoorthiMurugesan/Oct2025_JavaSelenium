@@ -1,3 +1,11 @@
+XPath- XML Path
+
+Types - Absolute xpath, Relative xpath
+
+Absolute xpath - Starts from the node. very log to write. not recommended
+Relative xpath - start from the required element. easy to understand. Recommended
+
+
 Website:
 =========
 https://www.lambdatest.com/

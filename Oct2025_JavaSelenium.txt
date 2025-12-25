@@ -690,3 +690,2514 @@ How to create a class, nested classes with different access modifiers
 How to create a interface, nested interfaces with different access modifiers
 How to create non-static methods and static methods 
 How to create variables
+********************************************************************
+
+Different variables
+How to create/call variables inside a method
+
+Variables - Its a memory location that can hold values of a specific datatype.
+
+Types of variables 
+1. Local variable - 
+	* Datatype declared/initiated within a method/constructor, for, if    -- block/body ({...})
+	* scope of local variable is only within the block in which the variable is declared
+	* local variables can not be static
+	{
+	int a = 10;
+	char c;
+	c = '2';
+	String sathya = "10";
+	static int b = 10; -- we can not create like this.
+	}
+	
+2. Instance variable/class variable/non-static variable
+	* Declared within a class but outside of a block ({...})
+	* Non- static variables
+	* To access instance variables, we need to create object for that class
+	
+	classA {
+	int a = 10; //class level non static variable
+	String sathya = "10"; //class level non static variable
+	
+	method1() {
+	int  aa = 10; // local variable
+	
+	sysout(sathya); // we can not use a non static like this. we need to create object
+	// it should be written as 
+	ClassA obj = new ClassA(); //object creation
+	sysout(obj.a);
+	}
+	
+	}
+	
+	
+3. static variable
+	* Declared within a class but outside of a block with "static" keyword
+	* static keyword is used with variables and methods
+	* To access this variable, dont need to create an object
+	* within a class - static can be used anywhere directly (in a static method or in non-static method)
+	* Outside class - static can be used but along with class name. (in a static method or in non-static method)
+	
+	static int a = 10;
+	static String sathya = "10";
+	public static int c = 200;
+	
+ClassA (TalukOffice) {
+
+static int receptionist = 10;
+
+method1() {
+	print (receptionist);
+}
+
+}
+
+
+ClassB (Govt hospital) {
+
+method2() {
+print (ClassA.receptionist);
+//print (TalukOffice.receptionist)
+}
+
+**************************************************************************
+
+*********Calling methods **********
+
+A work - method1(); -- 100 lines of codes
+
+B work - method2(); -- 100 lines of codes
+
+C work - method3(); -- 250 lines of code 
+	method3() is method1() + method2() + some other work
+
+- Reuse of methods 
+- duplicates and redundant codes - remove
+
+AS OF NOW, WE HAVE SEEN TWO KIND OF METHODS
+1. static methods 
+2. non-static methods
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+//	We can create object of a class in another class 
+//		* (eg: creating object for Class22 inside of CallingMethods1)
+	
+//	For reference: 
+//		* Which method you are going to call is matters
+//		* Which class you are going to call also matters
+//		* static methods/variables always belongs to the class
+	
+//&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+	
+//	With in A class
+//		* Calling a static method from non-static method 
+//				- Direct
+//		* Calling a static method from static method 
+//				- Direct
+//		* Calling a non-static method from non-static method 
+//				- Direct/ Object Creation
+//		* Calling a non-static method from static method 
+//				- Object Creation
+	
+//	withInAClass(from)		static			non-static
+//	non-static              DIRECT          DIRECT/OBJECT CREATION
+//	static 				    DIRECT          OBJECT CREATION
+	
+//&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+	
+//	Outside a class
+//	* Calling a static method of another class from non-static method 
+//			- ClassName + static method name
+//	* Calling a static method of another class from static method 
+//			- ClassName + static method name
+//	* Calling a non-static method of another class from non-static method 
+//			- Object Creation
+//	* Calling a non-static method of another class from static method 
+//			- Object Creation
+	
+//	OutsideOfClass		static			   non-static
+//	non-static          CLASSNAME          OBJECT CREATION
+//	static 				CLASSNAME          OBJECT CREATION
+	
+//&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+	
+//	CONCLUSTION
+//	When you are going to call a 
+//		* Non-static - Object Creation
+//		* static - direct(within a class) or along with class name (outside of class)
+
+
+
+************************************************************************
+Day  - 03/03/2025
+
+Access Modifier
+	* It defines where and who can use a method/variable/class
+	1) default
+	2) private
+	3) protected
+	4) public 
+	
+	Syntax = accessModifier dataType variableName/variable = variableValue (Could be local variable or non-static variable)
+		   = static accessModifier dataType variableName/variable = variableValue (class level variable or static variable)
+		   
+	int a = 10; - default (no need to mention "default" word
+	private int a = 10;
+	protected int a = 10;
+	public int a = 10;
+	
+	
+	package1
+		classA ( int a = 10)
+			ClassB (same package of ClassA and sub class of ClassA)
+		classC (same package but non sub of ClassA)
+	package2
+		classE (diff package and non sub class of ClassA)
+		classD (diff package and sub class of ClassA)
+		
+	
+How ClassA and other Classes can use variable 'a' based on its access modifier.
+
+classA                                 				| default (int a = 10)  |  private (int b = 20) | protected (int c = 30) | public (int d = 40)
+													 
+classA 				                				| yes     				| yes       			| yes        			 | yes
+									 				        
+same package but sub class (classB)	 			 	| yes     				| no        			| yes        			 | yes 
+									 				
+same package but NON sub class (classC) 			| yes     				| no        			| yes        			 | yes
+									 				
+different package but sub class (classD)			| no      				| no        			| no         			 | yes
+									 				
+different package but NON sub class (classE)		| no      				| no        			| no         			 | yes
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+JVM, JRE, JDK
+
+our codes - English - .java
+compile - .class - byte code (machine recognizable language). 
+			it is available in target folder.
+
+
+JVM - Java Virtual Machine 
+* This can not be seen
+* it starts the execution(creates Runtime Environment)
+* It first checks for main method and executes the codes inside the main method
+* It creates the code flow, in java the flow is called "Thread"  - "main Thread"
+* JVM provides run time environment in which Java byte codes can be executed
+* loads code| verifies code| execute code| provides run time environment
+
+JRE - Java Runtime Environment
+* Physically exist
+* Contains JVM and set of libraries
+* JVM uses these libraries to execute the codes
+
+JDK - Java Developement kit
+* It contains JVM, set of libraries and dev tools (JRE + dev tools)
+* Used to develop and execute the codes
+* Dev tools + debugger + compiler + java doc
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Java keywords
+new, class, interface, abstract, all the access modifiers, data types, static, this, super, throw, throws, try, 
+catch, final, finally, data type, if, for, while, break, continue, switch, case;
+
+* dont create variables and method names using java predefined keywords 
+* Java is case sensitive language (Sathya, sathya)
+* java is a OOPs(Object Oriented Program) language
+	* Java is not a 100% OOPs language
+
+Naming conversion in java
+* Should not use above things
+* homepage - homePage (Camel case)
+
+If you are creating package, method name
+* should start with small letter followed by camel case
+
+if you are creating class or interface or Object
+* should start with Captial letter followed by camel case
+
+thisIsPackageName 
+ThisIsClassName
+ThisIsInterfaceName
+
+thisIsMethodName
+thisIsObjectName or ThisIsObjectName
+thisIsVariableName
+
+package, method, object, variable - starts with small letter
+Class, Interface, Object - starts with Capital letter
+
+************************************************************************************
+
+Day 13 - 04/03/2025
+
+Day 14 - 05/03/2025
+
+parameterized methods using int, String 
+
+how to bring a local variable value outside of the method
+
+*************************************************************************************
+
+Day 15 - 06/03/2025
+
+Object creation in detail
+
+
+**************************************************************************************
+
+Day 16 - 07/03/2025
+
+Memory management in Java
+
+Return type in Java
+
+**************************************************************************************
+
+Day 17 - 08/03/2025
+
+Return type in Java - class 2
+
+
+**************************************************************************************
+
+Day 18 - 10/03/2025
+
+Return type in Java - class 3
+
+and multiple parameters and multiple return types
+
+**************************************************************************************
+
+Day 19 - 11/03/2025
+
+Class or interface as a parameter 
+
+HomeWork
+
+How to read a property file or any file using Java
+
+**************************************************************************************
+
+Day 20 - 12/03/2025
+
+How to read a property file or any file using Java - explanation the concept in the each line 
+
+public class ReadPropertyFile {
+    public static void main(String[] args)  {
+        String filePath = "config.properties"; // Specify the property file path
+        FileInputStream fileInput = new FileInputStream(); // Open the file
+        Properties properties = new Properties();
+        properties.load(fileInput); // public void load(FileInputStream a);
+      //  properties.load(10); //public void load(int a); 
+        fileInput.close(); // Close the file
+        
+      //  FileInputStream obj = new FileInputStream(); 
+       //obj.close(); 
+      //  close();
+
+        // Access property values
+        String value1 = properties.getProperty("abc");
+        String value2 = properties.getProperty("key2");
+        
+  //      String value1 = properties.getProperty("a");  // public String getProperty(String abc) { }
+        
+    //    String packageName.Properties.getProperty(String abc) 
+        
+     //   System.out.println("Player1 name is : " + value1);
+     //   System.out.println("Player2 name is : " + value2);
+        
+        syso(value1);  Key1: 10
+        syso(value2);  Key2: 20
+    }
+    }
+    
+    
+TeamMember.properties
+
+abc = "Sathya";
+xy = "Mani";
+
+Player1: Sathya
+Player2: Mani
+
+**************************************************************************************
+
+Day 21 - 13/03/2025
+
+Final variable in Java
+
+Constructor basics
+
+**************************************************************************************
+
+Day 22 - 14/03/2025
+
+Constructor basics - class 2
+
+**************************************************************************************
+
+Day 23 - 17/03/2025
+
+Before this class go through all the previous classes, importantly Final variable and SCP concept
+
+Final variable with Constructor.
+
+String basics
+String immutable
+
+*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+TOPICs WE LEANRED TILL NOW
+
+Class
+Interface
+variables
+Access Modifier
+static
+Method
+	static or non-static 
+	parameter or without parameter
+	return type or without return type
+Data type - Variables
+	Local Variable
+	Non static variable
+	static variable
+Object Creation
+Constructor
+Final variable
+String basic and String immutable, why?
+
+**************************************************************************************
+
+Day 24 - 19/03/2025
+
+Constructor with Final - explain in words
+
+Interface in detail
+
+**************************************************************************************
+
+Day 25 - 20/03/2025
+
+How to call interface body methods (static, private and default(explicitly mention) 
+
+Abstract class basic
+
+**************************************************************************************
+
+Day 26 - 21/03/2025
+
+How to call Abstract class methods 
+
+**************************************************************************************
+
+Day 27 - 22/03/2025
+
+Is Java OOPs language? explain?
+
+OOP - Object oriented programming
+Java is not 100% OOPs language
+Because of primitive data types - they are not object
+
+OOPs concepts
+	* Encapsulation - En + capsule + lation... block - {  } 
+	* Abstraction
+	* Inheritance in detail
+	* Polymorphism
+		* Overloading - compile time polymorphism
+		* Overriding - run time polymorphism
+		
+Different type of Object creation
+
+Multiple inheritance
+
+**************************************************************************************
+
+Day 28 - 25/03/2025
+
+Multi-level inheritance
+
+examples of Java, selenium for Multiple and Multilevel inheritance
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Polymorphism in detail
+	Overloading
+	Overriding
+	
+Method Signature
+
+Overloading in detail
+
+**************************************************************************************
+
+Day 29 - 26/03/2025
+
+Overriding in detail
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Overriding in Java
+
+1. Overloading - Compile time polymorphism
+	1. Within the class or same class 
+	2. Method name should same
+	3. No. of parameter, type of parameter and order of parameter
+
+
+2. Overriding - Runtime polymorphism
+	1. Between two classes 
+		* Those two classes should be in a relationship (Parent and child) - Inheritance
+	2. method name should be same
+	3. method parameters also should be same
+	4. Object creation plays an important role
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Keywords in Java
+
+static
+final
+Understanding println() method
+
+
+**************************************************************************************
+
+Day 30 - 27/03/2025
+
+final
+Understanding println() method
+main method understanding
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Java keywords 
+this and this();
+
+**************************************************************************************
+
+Day 31 - 31/03/2025
+
+this and this();
+super and super(); 
+
+***********************************************************************************
+
+Day 32 - 1/04/2025
+
+Constructor in detail
+
+1) should not have return type
+2) Cons. name should be same as class name and belongs to the class
+3) each class has a default cons. and its present implicitly
+4) during obj creation constructor call would happen
+5) Constructor can not be static 
+6) Cons. is private, we can not create obj of class in other classes
+7) We can parameterize constructor
+8) inside constructor we can call methods and create variables
+9) within a class, we can use this() to call one cons. from other
+10) every child class cons. has super() as a first line of code, in order to call the parent default cons.
+11) We can create a final variable without initiating but we need to initialize in all the constructors
+12) When default cons. is implicitly present and we create a parameterized cons., then default cons. will vanish.
+
+Blocks in Java
+
+static block in java
+
+
+***********************************************************************************
+
+Day 33 - 4/04/2025
+
+Exception handling 
+
+Errors and Exception
+
+***********************************************************************************
+
+Day 34 - 5/04/2025
+
+Throw and Throws Exception in Java
+
+Custom Exception
+
+***********************************************************************************
+
+Day 35 - 6/04/2025
+
+if condition
+
+***********************************************************************************
+
+Day 35 - 7/04/2025
+
+for loop in java
+
+Homework - Java pattern related coding questions.
+
+1. Nested for loop. Parent loop for - row; child loop for column
+2. temp variable 
+3. Println or print 
+4. where and when to use break
+5. initialization of parent for loop
+6. initialization of child for loop
+7. condition used in parent for loop
+8. condition used in child for loop
+ 
+***********************************************************************************
+
+Day 36 - 10/04/2025
+
+for loop patter revision
+
+1
+ 2
+  3
+   4
+    5
+    
+
+for(int i = 1; i<=5; i++) {
+
+for(int j = 1; j<=5;j++) {
+	if(i==j) {
+	System.out.print(j);
+	break;
+	}
+	else
+	System.out.print(" ");
+	}
+	System.out.println();
+
+} 
+
+
+***********************************************************************************
+
+Day 37 - 10/04/2025
+
+Debugging 
+
+switch condition
+
+
+***********************************************************************************
+
+Day 38 - 11/04/2025
+
+For loop patter discussion
+
+
+***********************************************************************************
+
+Day 39 - 15/04/2025
+
+while loop
+and 
+do while loop
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Scanner class 
+
+array basic
+
+***********************************************************************************
+
+Day 40 - 16/04/2025
+
+array in detail
+
+Home work 
+array programming questions. 
+	1. Sorting an array
+	2. find the largest number in an array
+	3. find the second largest number in an array
+	4. reverse an array
+	
+
+***********************************************************************************
+
+Day 41 - 17/04/2025
+
+ **Java array programming questions** (without using any Collections like `ArrayList`, `HashMap`, etc.). 
+ These are useful for interviews and practice, especially when you're restricted to core array operations.
+
+---
+
+### 🔰 **Beginner Level**
+1. **Find the maximum and minimum elements in an array.**
+2. **Reverse an array.**
+3. **Find the sum of all elements in the array.**
+4. **Find the average of array elements.**
+5. **Check if an array contains a specific value.**
+6. **Copy all elements of one array into another.**
+7. **Count the number of even and odd elements in an array.**
+8. **Merge two arrays into a third array.**
+9. **Find the second largest and second smallest elements.**
+10. **Left rotate an array by one position.**
+
+---
+
+### 🔁 **Intermediate Level**
+11. **Sort an array without using built-in sort functions (e.g., Bubble Sort, Selection Sort).**
+12. **Remove duplicate elements from an array.**
+13. **Insert an element at a specific position in the array.**
+14. **Delete an element from a specific position in the array.**
+15. **Find the frequency of each element in the array.**
+16. **Find common elements between two arrays.**
+17. **Find the missing number in a sequence of `n` numbers.**
+18. **Check if two arrays are equal (same elements and order).**
+19. **Shift all zeroes to the end of the array.**
+20. **Separate positive and negative numbers in an array.**
+
+---
+
+### 💡 **Advanced Level**
+21. **Find the subarray with the maximum sum (Kadane's algorithm).**
+22. **Check if the array is a palindrome.**
+23. **Find all pairs in the array whose sum equals a specific number.**
+24. **Rotate the array by `k` positions.**
+25. **Find the majority element (element that appears more than n/2 times).**
+26. **Rearrange array so that even indices have even numbers and odd indices have odd numbers.**
+27. **Find the intersection and union of two arrays.**
+28. **Move all negative elements to one side of the array.**
+29. **Find the longest increasing subsequence in the array (without Collections).**
+30. **Find the first non-repeating element in the array.**
+
+	
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+For Each loop details
+
+***********************************************************************************
+
+Day 42 - 18/04/2025
+
+jagged array 
+multi dim array
+
+String class in detail
+
+Home work 
+
+1. Learn array and programming questions
+2. Arrays class 
+3. String methods
+4. String interview program questions
+
+***********************************************************************************
+
+Day 43 - 20/04/2025
+
+Thread concept
+
+StringBuilder and StringBuffer
+
+String programming interview questions without using collections.
+
+Arrays
+
+***********************************************************************************
+
+Day 44 - 21/04/2025
+
+String interview questions
+
+1) reverse a string - 5 technique
+2) count total words  in a sentence
+3) reverse each words in a sentence
+4) count each words/letters in a sentence or word respectively
+
+***********************************************************************************
+
+Day 45 - 22/04/2025
+
+getters and setters
+
+Wrapper class
+
+Why Java is not 100% OOPs language is because of primitive data types.
+
+Wrapper classes 
+int - Integer
+char - Character
+double - Double
+boolean - Boolean
+
+Homework 
+1) How to read text file 
+2) How to read property file 
+3) How to read excel file (using apache poi and using fillo api)
+4) also for the above 3, write generic methods 
+5) How to create a folder, file or excel using Java
+
+***********************************************************************************
+
+Day 46 - 28/04/2025
+
+Excel reading
+
+***********************************************************************************
+
+Day 47 - 29/04/2025
+
+Introduction to collection
+
+Collection Hierarchy
+
+***********************************************************************************
+
+Day 48 - 30/04/2025
+
+ArrayList and HashSet basics
+
+
+***********************************************************************************
+
+Day 49 - 01/05/2025
+
+ArrayList in detail
+
+***********************************************************************************
+
+Day 50 - 02/05/2025
+
+HashSet in detail
+
+*** Home work****
+Count no. of letters in a String
+Count no. of words in a Sentence
+
+How to read and write in a property file
+How to read a excel using Apache POI API and Fillo API
+
+Interview questions
+array, String, Collection 
+	* Sort 
+	* Reverse
+	* Count duplicate
+	* Remove duplicate
+	
+
+***********************************************************************************
+
+Day 50 - 06/05/2025
+
+HashMap in detail
+
+List - Ordered, allows duplicate and multiple null value is allowed 
+	ArrayList<Integer> list = new ArrayList<Integer>();
+	List<Integer> list1 = new ArrayList<Integer>();
+	
+Set - Unordered, does not allow duplicate and only one null is allowed
+	HashSet<Integer> set = new HashSet<Integer>();
+	Set<Integer> set1 = new HashSet<Integer>();
+	
+
+Sathya - TCS 
+Nirmal - CTS 
+Partha - Wipro
+
+Map 
+
+Map - Interface
+HashMap - Class
+
+Key - Value pair
+
+Key - Works like Set 
+Value - Works like List 
+
+HashMap<String, String> map = new HashMap<String, String>();
+Map<String, String> map = new HashMap<String, String>();
+
+
+Create a excel with  headers and rows 
+Store the headers and given row's values in a map.
+
+Count repeated letters/words in a word/sentence respectively. 
+here also you can use map.
+
+a = 2;
+b = 1
+
+Sathiyamoorthi - count no. of letters in this word
+Pseudocode 
+	* seperate each letters in a sentence by using split("") or charAt(index) or toCharArray();
+	* now we have a String or char array.
+	* declare a an arraylist
+	* use two for loops 
+	* in parent for loop initalise a variable count = 1;
+	* if the letter is not present inside the ArrayList, then only, we will go through child for loop
+	* within child for loop, you have to use if condition to check array[i] == array[j]
+	* When the above if condition passes
+		* increase the count;
+	* once you check the each letter,  within parent for loop, add that letter a[i] to an ArrayList
+
+Home work:
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Collections Class
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+How do you read a excel file using apache poi 
+
+Where is the excel is present - path and name of the excel
+Which extension to be opened - is it xls or xlsx
+Which sheet? identity the sheet using index or name
+Which row 
+In that row what is the column? 
+In that row, in that column is that cell storing String or number? 
+	if its number, get numeric cell value
+	if its string, get String cell value
+
+
+1) File file = new File(excelFilePath)
+2) FileInputStream fis = new FileInputStream(file);
+3) .xls = HSSFWorkbook workbook = new HSSFWorkbook(fis))
+		workbook.getSheetAt(0);
+   .xlsx = XSSFWorkbook workbook = new XSSFWorkbook(fis))
+	workbook.getSheetAt(0);
+4)   for (Row row : sheet)
+5) 	for (Cell cell : row)
+
+public class ExcelReader {
+    public static void main(String[] args) {
+        String excelFilePath = "example.xlsx"; // Path to your Excel file
+        try (FileInputStream fis = new FileInputStream(new File(excelFilePath));
+             XSSFWorkbook workbook = new XSSFWorkbook(fis)) {
+
+            XSSFSheet sheet = workbook.getSheetAt(0); // Get the first sheet
+
+            for (Row row : sheet) { // Iterate through each row
+                for (Cell cell : row) { // Iterate through each cell in the row
+                    switch (cell.getCellType()) {
+                        case STRING:
+                            System.out.print(cell.getStringCellValue() + "\t");
+                            break;
+                        case NUMERIC:
+                            System.out.print(cell.getNumericCellValue() + "\t");
+                            break;
+                        case BOOLEAN:
+                            System.out.print(cell.getBooleanCellValue() + "\t");
+                            break;
+                        case FORMULA:
+                            System.out.print(cell.getCellFormula() + "\t");
+                            break;
+                        default:
+                            System.out.print("Unknown Cell Type\t");
+                    }
+                }
+                System.out.println(); // Move to the next line for each row
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+*********************************************************
+Day 51 (16/05/2024)
+
+* What is Software Testing -SDLC and STLC
+* What is manual testing
+* What is functional Testing
+* What is regression testing
+* Where do we need the automation most? Regression.
+
+🧪 Types of Functional Testing:
+	Type									Description
+Unit Testing					Tests individual functions or methods (often by developers).
+Smoke Testing					Basic checks to verify the application is stable.
+Sanity Testing					Quick test to check specific functionality after changes.
+Regression Testing				Ensures new changes haven't affected existing features.
+Integration Testing				Verifies interaction between modules or components.
+System Testing					End-to-end testing of the entire application.
+User Acceptance Testing (UAT)	Performed by end users to validate business functionality.
+
+
+
+What is OS based application (windows/iOS/Linex)
+What is Web based Application
+
+What is browser - Basic functionalities in browser 
+What is Web-Based application
+	* What are the basic operation 
+	* What is elements
+	
+Difference between Web Browser and Web application
+	Web Browser
+		* Chrome
+		* Edge
+		* Firefox
+		* HTML Browser
+		* headleass browser
+	Web application
+		* Facebook
+		* Flipkart
+		* HDFC website
+		* Jira
+	
+What and all we see in a browser
+	* URL bar
+	* Minimize button
+	* Maximize button
+	* New tab
+	* Close 
+	* New window
+	* Forward
+	* Backward
+	* Refresh
+	
+* what are the actions we do on a browser
+or
+* what are the basic properties of a browser 
+
+browser open
+url enter
+new tab open
+tab close 
+min 
+max
+entire browser close
+scroll
+zoom
+navigate - back, forward, refresh
+
+With in application what do we do
+
+application launch - url type
+text enter
+button click
+check box click
+radio box click
+drop down
+links click
+Text read/verify
+Tab title
+Mouse hover
+double click
+Right click
+Date choose
+Drag and drop
+File upload
+Verification/Assert 
+page load speed/time(synchronization)
+Keyboard
+pop up
+	alert
+	tab
+	web alert like info screen
+	Desktop window
+frames
+wait
+WebTable
+
+		
+What and all we see in a web application (Textbox, checkbox, drop down, button, radio button, link, text, image, video,..etc)
+What are the actions we do in an application (click, write, drag and drop, scroll)
+
+
+*********************************************************
+Day 52 (17/05/2024)
+
+Selenium Basics
+
+Why we need automation - saves Time and Man power
+Benefits
+
+Things to be considered before starting web automation.
+
+Different Automation tools and Editor
+Automation tools 
+	* Selenium
+	* UFT (QTP)
+	* PlayWrite
+	* RPA - Robotic process automation
+	
+Programming language
+	* Java
+	* Python
+	* .Net
+	* Ruby
+	* C##
+	* TypeScript
+	* JavaScript
+	
+Editor 
+	* Eclipse
+	* STS - Sprint Tool Suite
+	* InteliJ
+	* Visual Studio
+	
+Front end development tools and backend application tools
+
+Front End:
+	* HTML
+	* CSS
+	* Java, JavaScript
+	* Angular JS
+	* .Net
+	
+Back End
+	* Java/JavaScript/Angular/.Net
+	* Database management
+	* Cloud
+	* Source Code Management tools (SCM) - Git, Bit Bucket, AWS, Azure
+	
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+* In manual testing, we do the testing - (we are the tester)
+* In Automation, who would work as a tester - WebDriver (it is the automation tester)
+
+
+What is WebDriver 
+* WebDriver - interface
+* WebDriver is nothing but us(TESTERs).
+* The main properties of a browser are created as methods inside WebDriver interface
+
+* Why WebDriver is created as a interface?
+
+* WebDriver interface methods 
+	* Important concepts  
+		* return type of findElement(By by) and findElments(By by) and explain why?
+		* What is sessionId 
+		* What is windowHandle 
+		* return type of windowHandle() windowHandles() and explain why?
+
+Selenium Hierarchy
+	* SearchContext - interface
+	* WebDriver - interface (Basic actions we do on the Browser are written in this interface)
+	* RemoteWebDriver - Class
+	* ChromeDriver, EdgeDriver, FirefoxDriver, SafariDriver - Class
+	
+interface SearchContext {
+}
+
+interface WebDriver extends SearchContext {
+
+}
+
+class RemoteWebDriver implements WebDriver {
+
+}
+
+class ChromeDriver extends RemoteWebDriver {
+
+}
+	
+What is the significance of Remote WebDriver?
+What is the difference between Chrome Browser and ChromeDriver (likewise other browsers) - We will see it later
+
+
+************************************************************************************
+Day 53 (19/05/2024)
+
+What is WebElement
+	* Whatever element you see on a web page is called WebElement
+	* It is a interface which follows SearchContext (In Java)
+
+How do you find or interact with a WebElement:
+
+	* WebElements in a web page are represented by HTML tags
+	  
+
+	What is DOM in browser
+The Document Object Model (DOM) is a programming interface for web documents. 
+It represents the page so that programs can change the document structure, style, and content. 
+Essentially, the DOM provides a structured representation of the document (as a tree of objects), 
+and it defines a way that the structure can be accessed from programs 
+so that they can change the document's content, structure, and style.
+
+How do you open the DOM of a web page
+	* DOM (right click on a page and inspect or F12 or Ctrl+Shift + I)
+	
+	* diff types of tags
+		* html
+		* head
+		* body
+		* header
+		* input
+		* div
+		* ul
+			* li
+		* a 
+		* svg
+		* select (drop down)
+			* option
+		* frame or iframe (small html)
+		* table
+			* tr 
+			* th
+			* td
+			
+		* <table>
+		<body>
+			<div>
+				<tr>
+					<th>
+					<th>
+					<th>
+					<th>
+				<tr>
+					<td>
+					<td>
+					<td>
+					<td>
+				<tr>
+					<td>
+					<td>
+					<td>
+					<td>
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+HTML tag structures and attributes
+
+* attributes
+	whatever key value pair we see inside any tag is called attributes
+	
+	<div> - start tag
+	
+	</div> - end tag
+	
+	<div key1 = "val1" key2 = "val2" > - start tag
+	"text" 
+	</div>
+	
+	where
+	div - tagName
+	key1, key2 - attributes
+	val1, val2 - attribute's value
+	"text" - tag's display name
+
+How to find element in a page 
+
+<html>
+
+ancestor(div)
+  parent(div)
+	parent(ul)
+		child(li)
+			child(select)
+		child(ul)
+			child(li)
+			child(li)
+	parent(ul)
+	parent(li)
+ancestor(div)
+	parent(div)
+		child(div)
+</html>
+
+ancestor
+parent
+child
+siblings
+following ancestor, parent, child, siblings
+preceding ancestor, parent, child, siblings
+text
+contains(text, 'Sathya')
+
+
+************************************************************************************
+Day 54 (20/05/2024)
+
+Locators we see later
+
+XPath basic
+	* Explain how the element is placed in xml. From our element to html tag.
+
+XPATH - xml path
+
+two types of xpath
+
+Absolute xpath 
+Relative xpath 
+
+1) absolute xpath - like using steps 
+	* single slash - /
+	* full path need to written - from html
+	* /html/body/nav/div/div/ul[1]/li[1]/span
+
+	* If there is a change in UI, the above order will change and we can not find our desired element 
+		using the above xpath. 
+	* So using this xpath is  NOT RECOMMENDED.
+	
+2) Relative xpath
+
+Syntax
+//tagName[@attributeName = 'value']OR -- Most preferred
+//*[@attributeName = 'value'] OR 
+//tagName[@attributeName = "value"] 
+
+String xpath = "//tagName[@attributeName = \"value\"]"
+
+************************************************************************************
+Day 55 (21/05/2024)
+
+Relative xpath 
+
+basic and simple xpath
+and
+or
+you can also use * instead of tagName
+text()
+contains with text(), value
+contains with @attribute, value
+//following::tagName
+//preceding::tagName
+//ancestor::tagName
+//parent::tagName
+//child::tagName
+//following-sibling::tagName
+//preceding-sibling::tagName
+We can use numbers along with xpath 
+
+by writing single xpath, you can access multiple elements too (eg: drop down values or menu values)
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+//tagName[@attribute = 'value']//following::tagName
+
+When element is not found - we get elementNotFoundException
+
+Why element is not found, because we wrongly identified the element
+1) spelling mistake
+2) flow mistake
+3) xpath wrong
+4) timing - synchronization between code run and web page loading
+
+StaleElementException
+	* Element is available in DOM but not visible in UI
+		
+https://www.guru99.com/xpath-selenium.html#text
+https://www.guru99.com/locators-in-selenium-ide.html
+
+************************************************************************************
+Day 56 (23/05/2024)
+
+How do you open a web site in your system? 
+
+Chrome browser and ChromeDriver difference.
+
+Chrome Browser
+What it is: Google Chrome is a web browser used by people to browse websites.
+
+Purpose: It is designed for human interaction, displaying websites, running web apps, and accessing online content.
+
+ChromeDriver
+What it is: ChromeDriver is a separate executable that WebDriver (from Selenium, for example) uses to control the Chrome browser.
+
+Purpose: It acts as a bridge between test scripts and the Chrome browser.
+
+Compatibility issue. 
+
+To manage compatibility issue, we have 
+WebDriverManager - we will see it later 
+
+WebDriverManager automates all of this. It:
+
+Downloads the appropriate driver version.
+
+Sets the path automatically.
+
+Keeps drivers up to date.
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Selenium - its a tool to automate web application. 
+
+Official website - https://www.selenium.dev/
+
+Selenium 3 and 4 difference
+
+Selenium is written in many languages 
+	Java
+	Python
+	C# (.Net)
+	Ruby
+	JavaScript
+	
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Selenium Hirarchy 
+* SearchContext Interface (findElement, findElements)
+* WebDriver Interface ( Basic methods for a browser) 
+* RemoteWebDriver Class( all basic methods are implemented here)
+* Classes (ChromiumDriver)ChromeDriver, (GeckoDriver)FirefoxDriver, (ChromiumDrier)MS Edge,  etc..
+
+
+interface SearchContext methods
+
+  List<WebElement> findElements(By by);
+  WebElement findElement(By by);
+  
+interface WebDriver methods 
+
+  void get(String url);
+  @Nullable String getCurrentUrl();
+  @Nullable String getTitle();
+  @Override
+  List<WebElement> findElements(By by);
+  @Override
+  WebElement findElement(By by);
+  @Nullable String getPageSource();
+  void close();
+  void quit();
+  Set<String> getWindowHandles();
+  String getWindowHandle();
+  TargetLocator switchTo(); // TargetLocator - Interface present inside WebDriver interface
+  Navigation navigate(); // Navigation - Interface present inside WebDriver interface
+  Options manage(); // Options - Interface present inside WebDriver interface
+  
+class RemoteWebDriver 
+	* All methods of WebDriver and WebElement interfaces are implemented here. Along with that some addtional test methods are also there
+	
+class ChromeDrive or FirefoxDriver or EdgeDriver
+	* Browser specific methods are written in the classes
+	
+
+public interface WebElement extends SearchContext, TakesScreenshot;
+	
+WebElement methods();
+
+  void click();
+  void submit();
+  void sendKeys(CharSequence... keysToSend);
+  void clear();
+  String getTagName();
+  default @Nullable String getDomProperty(String name) {
+    throw new UnsupportedOperationException("getDomProperty");
+  }
+  default @Nullable String getAriaRole() {
+    throw new UnsupportedOperationException("getAriaRole");
+  }
+  default @Nullable String getAccessibleName() {
+    throw new UnsupportedOperationException("getAccessibleName");
+  }
+  boolean isSelected();
+  boolean isEnabled();
+  boolean isDisplayed();
+  String getText();
+  @Override
+  List<WebElement> findElements(By by);
+  @Override
+  WebElement findElement(By by);
+  default SearchContext getShadowRoot() {
+    throw new UnsupportedOperationException("getShadowRoot");
+  }
+  Point getLocation();
+  Dimension getSize();
+  Rectangle getRect();
+  String getCssValue(String propertyName);
+
+  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+  
+Window Handle in Selenium
+
+session id - driver 
+window handle - id unique is for each window opened during above session. its never going to be a duplicate value.
+
+By using a driver's, if we open one or more browser window,
+	each window will be assigned with a ID and its called window handle. 
+	
+Where is the driver's "focus" would be.
+
+String getWindowHandle();// for a single window
+Set<string> getWindowHandles(); // for multiple windows
+
+switching to a newly opened window when only one new window is opened.
+
+
+*************************************************************************************  
+Day 57 (24/05/2024)
+
+1) How to add Selenium to our project
+	* as a dependency
+	* https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+	* Add dependency to your project's pom.xml (learn and know how the dependency is added to your project)
+	* Update the maven project
+	* confirm the dependency is visible on the project under Maven dependencies
+	
+2) Writing a first Selenium code 
+	* How do you launch the Amazon application in Chrome browser? 
+	* Manually
+		* Run chrome.exe file by the tester or user
+		* Enter the url
+	* Through Automation 
+		* ChromeDriver.exe need to be run by WebDriver
+		* How do WebDriver know where is my ChromeDriver.exe?
+			* We need to give the location of ChromeDriver.exe file to the WebDriver 
+			* We need to download it and add it in your project
+		* What is the check here? 
+			* Your installed Chrome browser version should be aligned with ChromeDriver version
+			* Else you will get compatibility issue.
+				
+			
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Why do we create object as below
+
+WebDriver driver = new ChromeDriver();  //here Overriding concept will be applied. 
+When we call, WebDriver methods will show, but while  we run methods from ChromeDriver or its parent class method will run.
+
+why not 
+
+ChromeDriver driver = new ChromeDriver();
+
+
+System.setProperty("webdriver.chrome.driver", "C:\\Users\\LENOVO\\git\\SaraswathyJavaProject\\drivers\\chromedriver_107.exe");
+ChromeDriver driver = new ChromeDriver();
+
+
+But we do not need to create object like above.
+Because it will cause a problem when we need to open different browser in single driver instance
+
+To avoid this we keep WebDriver interface as reference for object
+
+WebDriver interface and ChromeDriver/FirefoxDriver/SafariDriver/EdgeDriver are connected through RemoteWebDriver class
+
+All the methods in WebDriver interface are implemented in RemoteWebDriver.
+
+All browser drivers are extended to RemoteWebDriver
+
+WebDriver driver; 
+driver = new ChromeDriver();
+driver = new FirefoxDriver();
+
+{ 
+
+ChromeDriver driver = new ChromeDriver();
+
+code
+
+driver = new EdgeDriver();
+
+EdgeDriver driver1 = new EdgeDriver();
+
+WebDriver driver = new ChromeDriver();
+
+driver = new EdgeDriver();
+driver = new FireDriver();
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+WebDriver methods - practice
+
+
+
+public interface WebDriver  {
+Options manage();
+}
+
+interface Options {
+
+    void addCookie(Cookie cookie);
+    void deleteCookieNamed(String name);
+    void deleteCookie(Cookie cookie);
+    void deleteAllCookies();
+    Set<Cookie> getCookies();
+    @Nullable Cookie getCookieNamed(String name);
+    Timeouts timeouts();
+    Window window();
+}
+
+interface Window {
+    Dimension getSize();
+    void setSize(Dimension targetSize);
+    Point getPosition();
+    void setPosition(Point targetPosition);
+    void maximize();
+    void minimize();
+    void fullscreen();
+}
+
+interface Timeouts {
+  default Timeouts implicitlyWait(Duration duration) {
+  }
+ 
+ 
+implicitlyWait - in Selenium
+	* In Selenium, implicitlyWait() is used to tell WebDriver to wait for a certain amount of time 
+	when trying to find an element if it is not immediately available.
+	
+*****************************************************************************
+
+Day 58 (25/05/2024)	
+	
+Locators in Selenium 
+
+ We find elements in a page using locators 
+  
+1) id
+2) name
+3) className
+4) tagName
+5) linkText
+6) partialLinkText
+7) xpath
+8) css
+
+Locators in selenium - 
+	locator value should not be duplicate. must be unique
+		means, id = "sathya" should be present only once
+
+id 
+	* most preferred 
+	* do not use if it has numbers in it. 
+	* id = "abc123"; - DO NOT USE
+		* if we reload again, the id value may change to "abc114"
+name
+className
+	* with more spaces 
+tagName
+linkText
+partialLinkText
+CSS selector
+xpath -XML path
+
+
+id, name, className(class) - when these values are unique we can use them directly. 
+When they are not unique, we use either xpath or CSS
+
+findElement(By.id(""));
+findElement(By.name(""));
+findElement(By.class(""));
+findElement(By.linkText("selenium"));
+findElement(By.linkText("Testing Frameworks"));
+findElement(By.linkText("Logging Frameworks"));
+findElement(By.parialLinkText("Frameworks"));
+
+
+	By obj1 = By.className("");
+		WebElement ele = driver.findElement(obj1);
+		ele.click();
+		
+		driver.findElement(By.className("")).click();;
+		
+		driver.findElement(By.id("")).sendKeys();
+
+* when id, name, className attributes are present in an element tag but they not unique, then we go to xpath 
+* When id, name, className attributes are not present inside an element's tag, then also we use xpath
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+CSS Selector
+
+Examples of CSS Selectors
+What You Want to Select			CSS Selector Example								Explanation
+Element by tag						div											Selects all <div> elements
+Element by class					.className									Selects all elements with that class
+Element by ID						#elementId									Selects the element with that ID
+Nested element						div > span									Selects <span> directly inside <div>
+Attribute value						input[name='username']						Input with a name attribute = 'username'
+Partial attribute value				a[href*='login']							Link where href contains "login"
+Multiple classes					div.class1.class2							Element with both class1 and class2
+
+*****************************************************************************
+
+Day 59 (27/05/2024)
+
+findElements method 
+
+*****************************************************************************
+
+Day 60 (28/05/2024)
+
+Window Handling! 
+
+*****************************************************************************
+
+Day 61 (29/05/2024)
+
+Window Handling!  - Class 2
+
+Lets consider 3 window - WinA, WinB, WinC
+
+1. Get window handle of the current window - WinA 
+2. do any actions and open many the windows
+3. user getWindowHandles() method to get all window handles
+4. Remember that, your or your driver's focus is still on WinA, even though you see any other window on your screen.
+5. Use for loop or iterator to iterate between the window handles.
+6. To switch to each window handle (window) user switchTo().window(winHandle) method
+7. Once you switch to a window get its title
+8. if the title you get through iteration, matches your expected title then end the for loop.
+
+
+Case study:
+1. Get window handle of the current window - WinA - parent window
+2. do any actions and open another the window
+3. user getWindowHandles() method to get all window handles
+4. Remember that, your or your driver's focus is still on WinA, even though you see any other window on your screen.
+5. Use for loop or iterator to iterate between the window handles.
+6. if the window handle is not parent window's handle then switch to that window
+7. Now you are in the child window
+8. use driver.close() and close the child window
+9. Now, where my driver's focus will be?
+
+*****************************************************************************
+
+Day 62 (30/05/2024)
+
+Alerts in Selenium
+
+What is alert 
+	* Alerts does not let you to proceed with original application unless its been handled.
+	* its a pop up ( web based pop up and OS based pop up)
+
+How do you identify whether its a alert or any other normal web page
+	* Alert does not let you to proceed with original application
+	* Alert does not have any url
+	* you can not inspect an alert 
+
+Types:
+	* Simple/Informational alert - OK(Accept) button along with some text
+	* Prompt alert - Yes(accept) or no(dismiss) alert 
+	* Confirmation Alert - You need to enter a text to proceed further 
+
+
+
+How to handle an alert:
+	* in web page we click a link or button, then it will throw an alert.
+	* Web page's focus will be removed 
+	* We need to manually switch the focus of the webdriver to the alert
+Where the alert is present:
+	WebDriver -> TargetLocator switchTo() - Alert alert();
+	
+	public interface WebDriver {
+	
+	TargetLocator switchTo();
+	
+	interface TargetLocator {
+		Alert alert()
+	}
+	
+	Alert methods 
+	public interface Alert {
+  		void dismiss();
+ 		void accept();
+  		String getText();
+  		void sendKeys(String keysToSend);
+}
+	
+	}
+How do we switch focus to alert 
+	1) Alert alt = driver.switchTo().alert();
+		alt.dismiss(); or alt.accept();
+	2) driver.swithcTo().alert().accept();
+
+Problem we face while working with Alert:- 
+	1) We are expecting an alert after clicking an element
+		also we write a code to manage the alert
+		But sometimes, the alert wont pop up. - Exception:- NoSuchAlertException/NoAlertPresentException
+	2) We are not expecting any alert
+		But alert pops up - Exception: UnhandledAlertException 
+		
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Drop down handling using Selenium
+
+There are two types 
+	* Single selection
+	* Multi selection
+	
+* How Dropdown are configured in a web page
+	* By using select tag and options tag
+		* index
+		* value - attribute
+		* display text - attribute
+		
+	Selenium has a separate class to handle select tag drop down
+		* Select class
+		* first locate the select  tag - and store it in to Webelement
+		* Select select = new Select(WebElement); 
+		
+Important methods 
+	1) selectByIndex(int)
+	2) selectByVisibleText(String)
+	3) selectByValue(String)
+	4) getOptions()
+	5) deselectAll() - works only on multiple select 
+	6) isMultiple()
+	7) selectByContainsVisibleText(String)
+	
+******** You can also access the drop down with out using Select class***********
+
+In that time you need to use - findElements() method
+
+*****************************************************************************
+
+For the last 4 days 
+
+We practiced writing xpath and creating generic method using amazon website.
+
+*****************************************************************************
+		
+Day 63 (05/06/2024)
+
+Frame in selenium
+
+Nested html page available inside original webpage - frame/iframe - tag names
+
+<html>
+<body>
+<div>
+	<ul>
+		<li>
+		<li>
+	</ul>
+	<iframe> 
+		<html>
+		<body>
+			<span>
+			</span>
+		</body>
+		</html>
+	</iframe>
+</div>
+</body>
+</html>
+
+
+
+1) find/locate the desired element
+2) Check whether the element is present directly inside html or inside of any iframe/frame
+3) if the element is present inside iframe/frame
+	a) first locate the iframe/frame element
+	b) switch into the iframe/frame --> driver.switchTo().frame(int index);
+									-->  driver.switchTo().frame(String frameName);
+									-->  driver.switchTo().frame(WebElement ele);
+	c) access the element 
+	d) to go back to the original html or parent iframe/frame
+		--> driver.switchTo().defaultContent();
+		
+
+* frames can be nested. Each time you access an element in a frame, you need to switch to it. 	
+<html>
+	<iframe>
+		<div> </div>
+		<frame>
+				<div></div>
+		</frame>
+	</iframe>
+</html>
+				
+div - is our element 
+	1) from here if you user driver.switchTo().parentFrame(); --> driver focus moves to <iframe>
+	2) from here if you user driver.switchTo().defaultContent(); --> driver focus moved to either <iframe> or <html>
+	
+Exception we encounter while working with frames or iframes
+	* NoSuchElementException
+	* NoSuchFrameException
+	
+HOME WORK 
+	* Practice frame and nested frames
+
+
+*****************************************************************************
+		
+Day 64 (06/06/2024)
+
+Actions class in detail
+
+The Actions class in Selenium (often referred to as Actions or Actions Class) is used to handle complex user interactions 
+like mouse movements, key presses, click and hold, drag and drop, etc. 
+
+
+*****************************************************************************
+		
+Day 65 (09/06/2024)
+
+Robot class in detail
+
+The Robot class in Java (from java.awt.Robot) is often used in Selenium for simulating low-level 
+keyboard and mouse interactions that Selenium WebDriver itself cannot handle, such as:
+
+* Handling file upload/download dialogs
+
+* Simulating keyboard presses outside the browser
+
+* Taking full-page screenshots
+
+* Dealing with OS-level pop-ups
+
+*****************************************************************************
+		
+Day 66 (10/06/2024)
+
+Actions and Robot class revisit
+
+*****************************************************************************
+		
+Day 67 (12/06/2024)
+
+Casting in Java
+
+Casting in Java refers to converting one data type into another. There are two main types of casting:
+
+1. Primitive Type Casting
+	a. Widening Casting (Implicit)
+		Automatically done by Java.
+		Smaller to larger type conversion.
+
+Examples:
+	int a = 10;
+	double b = a;  // int to double
+	Order:
+	byte → short → int → long → float → double
+
+	b. Narrowing Casting (Explicit)
+		Manually done using parentheses.
+		Larger to smaller type conversion.
+
+Examples:
+	double a = 10.5;
+	int b = (int) a;  // double to int, value becomes 10
+
+
+2. Reference Type Casting (Objects)
+	Used when dealing with class hierarchies.
+
+	a. Upcasting (Implicit)
+		Subclass to superclass.
+		Safe and automatic.
+Example:
+	class Animal {}
+	class Dog extends Animal {}
+	Animal a = new Dog();  // Upcasting
+	
+	b. Downcasting (Explicit)
+		Superclass to subclass.
+		Needs explicit cast and may throw ClassCastException at runtime if types are incompatible.
+
+Example:
+	Animal a = new Dog();   // Upcasting
+	Dog d = (Dog) a;        // Downcasting
+	Important Notes
+	Always check with instanceof before downcasting:
+
+		if (a instanceof Dog) {
+			Dog d = (Dog) a;
+			}
+Casting is different from conversion in high-level classes like String → int, which requires parsing (e.g., Integer.parseInt("123")).
+  
+*****************************************************************************
+		
+Day 68 (13/06/2024)
+
+Wait in Selenium
+
+In Selenium WebDriver, waits are used to synchronize the execution of test scripts with the web application under test. 
+This ensures that Selenium waits for certain conditions before performing actions, 
+helping to avoid flaky or failing tests due to timing issues (e.g., elements not being ready).
+
+1. Implicit Wait
+	Tells WebDriver to wait a specified amount of time when trying to find an element if it is not immediately available.
+	Applies globally to all elements.
+
+Example:
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	
+2. Explicit Wait
+	Waits for a specific condition to occur before proceeding further in the code.
+	More powerful and customizable than implicit waits.
+
+Common Conditions (from ExpectedConditions):
+	visibilityOfElementLocated
+	elementToBeClickable
+	presenceOfElementLocated
+	alertIsPresent
+	titleContains
+
+Example:
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username")));
+	
+3. Fluent Wait
+	A more advanced form of explicit wait.
+	Allows you to define:
+		Polling frequency
+		Exceptions to ignore
+		Timeout duration
+
+Example:
+	Wait<WebDriver> wait = new FluentWait<>(driver)
+    	.withTimeout(Duration.ofSeconds(30))
+    	.pollingEvery(Duration.ofSeconds(5))
+    	.ignoring(NoSuchElementException.class);
+
+WebElement element = wait.until(driver -> driver.findElement(By.id("username")));
+
+🧠 When to Use Which?
+	Situation	Recommended Wait
+	Wait for element load globally	Implicit Wait
+	Wait for specific condition	Explicit Wait
+	Retry with custom polling and exception handling	Fluent Wait
+
+❌ Avoid This: Thread.sleep()
+	Hard-coded wait.
+	Always waits full duration, even if condition is met earlier.
+	Slows down your test unnecessarily.
+
+✅ Best Practices
+	Use explicit waits for dynamic elements.
+	Avoid mixing implicit and explicit waits.
+	Use FluentWait when polling is required (e.g., waiting for a spinner to disappear).
+	
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Scrolling in Selenium
+	* We can not automate scrolling using the selenium
+	* sometimes you want to bring an element into the view of your screen to perform operation
+		
+There are different ways to scroll your application when you work using selenium
+	* JavaScriptExecutor (need typecasting)
+	* Key board or mouse (Actions or Robot class)
+	* Actions class - moveToElement() methods is often used
+	
+Along with Scrolling, we can also do click and send text to any element using JSE(JavaScriptExecutor).
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Screenshot in Selenium
+
+1) using TakesScreenshot interface 
+	1. Take Full Page Screenshot
+		Best for: capturing the visible part of the page.
+	2. Take Screenshot of a Web Element
+		Best for: testing visual appearance or layout of individual elements.
+2) Take Full Page Screenshot with AShot (3rd-party Library)
+3) Robot Class for Web Screenshots
+	
+*****************************************************************************
+		
+Day 69 (14/06/2024)
+	
+Web table in detail 
+
+How do we work on frame, select, shadow root element 
+
+1) We identity the frame tag (parent tag) and then access the elements present in that tag.
+2) We identity the select tag(parent tag) and then accecss the options 
+3) We identity the tag (shadow host/parent tag) which contains the shadow root and then we access the element inside the tag.
+
+Like wise,
+	We need to identify the tag named <table> and then access the element inside it
+	<tr> - table row 
+	<th> - table header
+	<td> - table data
+	
+	<table>
+		<tr>  - 
+			<th>
+			<th>
+		<tr>
+			<td>
+			<td>
+		<tr>
+			<td>
+			<td>
+			
+Questions can be asked in related to web table.
+	1) Get/print all table header
+	2) print all row values
+	3) Print request column's values  
+	4) Based on request, fetch/delete/edit/modify the respective row values
+	5) Based on one column value, find the respective another column's value
+	6) How many rows are in the table including/excluding header row
+	
+	
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Shadow root elements
+
+	* If an element is present inside the shadow root, we can not locate it in DOM using xpath or CSS.
+		It always shows 0 of 0.
+	* To access an element which is present inside the shadow dom or show root. You need to find thet host of the shadow root
+		* Then use the method getShadowRoot();
+	* Keep in mind that, xpath wond work inside the shadow root. 
+		* You need to use the CSS Selector
+		
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+		
+WebDriver manager
+
+To avoid browser compatibility issue and manual download of the respective driver
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+TestNG
+
+validation in Selenium using TestNG
+
+TestNG is a testing framework inspired from JUnit and NUnit 
+but introducing some new functionalities that make it more powerful and easier to use. 
+It supports test configured by annotations, data-driven testing, parametric tests, etc.
+
+* To use TestNG methods in your project, you need to add its "dependencies"
+* To use TestNG with your eclipse, you need to add its "plug-in" from Eclipse market place
+
+TestNG
+* Its a multipurpose tool and also works as a framework
+* We can use TestNG as a tool when we use Test Driven or Behaviour Driven frameworks
+* TestNG gives you some annotations and tags, so that you can run your test cases easily 
+* To work with TestNG in Eclipse, you need to install TestNG Eclipse plugin via market place 
+* In order to use TestNG annotations and tags in your project, you need to add TestNG dependencies 
+
+Official Documentation page: https://testng.org/#_testng_documentation
+
+Main annotation of TestNG is @Test 
+	* If we run a class using TestNG, then whatever methods represented as @Test will run
+	* There are two way to run a class file using TestNG
+		1) Simply right click on the class and Run as TestNG 
+		2) Right click on the class from project path, Covert the class into TestNG. It will create a xml file. 
+			By using the file we can run the class (recommended way)
+Whenever we run as TestNG, 
+	1) we get a basic report under test-output --> index.html
+	2) we also get the recently failed test case details --> emailable-report.html
+	3) For recently failed test cases, we get xml in testng-failed.xml
+
+
+
+*****************************************************************************
+		
+Day 70 (16/06/2024)
+
+TestNG provides a default report(index.html) and emailableReport.html.
+@Test - estential to run your test case 
+Alphabetical order 
+To control the order of @Test's, you need to use priority
+TestNG xml - how to generate it and how to run from xml
+	* Right click the desired class
+	* TestNG -> Convert to TestNG
+	* xml will be generated
+Annotations
+	A TestNG test can be configured by @BeforeXXX and @AfterXXX annotations 
+	which allows to perform some Java logic before and after a certain point, 
+	these points being either of the items listed above.
+	
+Suite
+Test
+Class
+Method
+Easy way to remember - State CM (ST CM)	
+
+@BeforeSuite
+@AfterSuite
+@BeforeTest
+@AfterTest
+@BeforeGroups
+@AfterGroups
+@BeforeClass
+@AfterClass
+@BeforeMethod
+@AfterMethod
+@Test
+
+Annotation Attributes
+	Priority
+	Enabled
+	AlwaysRun - mostly used with grouping
+	Group
+	DependsOnGroup
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+You should know, 
+	* different ways to run a TestNG class
+		* open class, righ click and run as TestNG
+		* Right click and run as TestNG
+		* Create a xml for that, and open the xml and run
+		* Create a xml and right click on the xml and run  
+	* Default report (always have the latest run's report or always it would be overridden)
+		* index.html
+		* emailable report.htmml
+		* failed test case xml
+	* Default suit and default test - you can change the name if you want
+	
+	
+Annotation Attributes - continuation
+	Depends on Method
+	Invocation count
+	
+Annotation
+	* @Parameters
+	* @DataProvider
+	
+Homework - How to do validation using TestNG in selenium
+
+*****************************************************************************
+		
+Day 71 (19/06/2024)
+
+TestNG assertion
+
+Assertions in Selenium UI testing (with TestNG or any test framework) are essential 
+because they validate that the application behaves as expected during or after an interaction. 
+Simply put, assertions are what turn your automation scripts into actual tests.
+
+Assertions immediately fail the test if something goes wrong, allowing early detection of bugs.
+
+Without assertions, your Selenium script may:
+
+Click buttons
+Fill out fields
+Navigate pages
+
+But it doesn't verify if those actions had the correct result.
+
+* Test with assertions = proves the system works
+* Test without assertions = just simulates actions
+
+Common TestNG Assertions
+	Method	Description
+		Assert.assertEquals(actual, expected)	Checks if two values are equal
+		Assert.assertTrue(condition)	Validates that a condition is true
+		Assert.assertFalse(condition)	Validates that a condition is false
+		Assert.assertNotNull(object)	Ensures the object is not null
+		Assert.assertNull(object)	Ensures the object is null
+		
+Example: With vs Without Assertion
+Action					Without Assertion				With Assertion
+Go to Login Page		Opens the page				Confirms page loaded correctly
+Enter credentials		Types values				Validates fields accepted input
+Click login				Clicks the button			Confirms dashboard appears
+Test outcome			No validation				Fails if title != "Dashboard"
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Orange HRM Page
+
+https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index
+
+Admin - Manimekala
+PIM - Anbu
+Leave - Mani
+
+*****************************************************************************
+Day 71 (19/06/2024)	
+Day 72 (21/06/2024)
+
+xpath and methods creation for Orange HRM page. 
+
+
+*****************************************************************************	
+Day 73 (22/06/2024)
+
+Framework in Selenium
+
+Difference between Automation and Framework?
+* Doing a work without manual effort is called - Automation
+	* In Automation - duplicate codes, redundency of codes will be there
+	* Explaining the flow is difficult 
+	* We can not use it for some other web application
+	* To automate each test case, it would take more time because we dont have common or generic methods to reuse.
+* Doing a same work by using a properly arranged structure of code.
+	E.g: keep a separate class to read or write on excel, prop or config or text files
+	
+Page Object Model design pattern... 
+	* each page - each java class (login page, cart page, payment page)
+	* each class - find all the elements inside of it and store it in a variable with proper name. (Page Objects)
+	* each class - find all the possible test cases and covert them into methods (Page Objects)
+	* how do you differentiate pages in an application - if URL changes, its a new page
+	
+https://practice.expandtesting.com/
+https://magento.softwaretestingboard.com/
+
+Different frameworks available
+	* Test Driven
+	* Data driven Framework
+	* Keyword driven Framework
+	* Hybrid framework
+	
+Tools - JUnit, TestNG
+
+Behaviour Driven Framework
+	* Cucumber along with JUnit/TestNG
+	
+When should we Automate
+	* Web Application should be stable
+	* Manual Test cases available - Manual understanding needed to know the application
+	* What are the regression Test cases, in that...
+	* In Manual Test cases 
+		* What can be automated
+		* What can not be automated
+		* partially automated 
+		* Manual intervention test cases
+	* Define Complexity of Test cases 
+		* Low 
+		* Medium
+		* High
+	* How much time it would take to complete the entire automation
+		
+Once we figure out the test cases
+
+1) What technology we are going to use - Java, Python, Selenium, Playwrite, QTP
+2) IDE - Eclipse, Visual Studio Code, InteliJ, STS(Spring tool suite)
+3) Framework - Data driven, Keyword, Hybrid (Data + keyword + POM + TestNG), Behaviour Driver (Cucumber + TestNG)
+4) How do store data - Excel, Json, CSV
+5) What are the standards we are going to follow
+	* method naming
+	* webElement naming
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Creating a new framework with TestNG
+
+1) Maven project
+2) Add required Dependencies - TestNG, Selenium
+	(also add the TestNG library to the project, also add TestNG plugin into Eclipse)
+3) Add the drivers
+3) Packages creation
+		src/main/java
+			* Base package
+				* Generic Class (We keep all the common methods related to Selenium)
+				* Utility Class (File, Excel, prop, text) reading methods
+			* Pages package
+				* One class for each page
+		src/main/resources
+			* Files which will be used with src/main/java package classes
+		src/test/java
+			* TestCases package
+				* New hire TCs class, etc
+		src/test/resources
+			* Files which will be used with src/test/java package classes
+
+TestNG Framework!!
+https://github.com/SathiyamoorthiMurugesan/Oct24TestNGFramework/tree/master
+
+***********************************************************************************
+
+Day 74 (23/06/2024)
+
+Framework creation
+
+***********************************************************************************
+
+Day 75 (24/06/2024)
+
+Extent report in detail 
+Page factory
+
+Framework running
+
+*************************************************************************************
+
+Agile
+
+
+
+Two kind of methodology
+1. Agile
+2. Water fall.
+
+Difference between waterfall and agile 
+
+Agile methodology
+
+key words 
+
+Scrum time period or Agile time period  (Iteration)
+	- one or two week or 15 days (Mostly its starts on Wednesday and ends with Tuesday)
+	
+an epic serves to manage tasks. It's a defined body of work that is segmented into specific tasks 
+(called �stories,� or �user stories�) based on the needs/requests of customers or end-users
+
+
+PI meeting - 
+	High level team works on who will work on which changes and those changes will be split into small parts so that, 
+	we can do that small work in one sprint time
+	Duration: 4 hours to half a day 
+	Attendee: Product Owner and Scrum master
+	
+Sprint Planning
+	Task(User Stories) for small work is created, explained, assigned to a person, complexity will be decided
+	Here complexity is called story point
+	Basically story point is fibanocci series 1, 2, 3, 5, 8, 13.
+	
+	Inform your leave plan
+	 
+Daily Stand-Up
+	What you did yesterday
+	what are you going to do today 
+	what is your plan for tomorrow
+	Any risk on completing work
+	
+	leave details for unplanned or planned leave
+	
+Sprint Review/Demo
+	Give prove it or demo on whatever stories you did on that sprint
+
+Sprint Retrospective
+	What went well and appreciations
+	What need improvement
+	
+	
+When there is a risk in completing a story
+	E.g: Developer gives story to testing when there is only 3 days left. But in order to complete the testing you need 7 days
+In this case
+	1. No other choice you need to complete the testing in 3 days itself.
+	2. Complete as much as possible, then create a new QA(Testing) story in next sprint
+	3. Move the entire story from this sprint to next sprint
+	4. Let your scrum master to ask for extension of the current sprint
+
+*********************
+
+Scrum
+
+Teams in Scrum
+
+Company - Wipro
+client/Account - Alight
+	* One Account can have multiple projects
+Domain - Health & Welfare
+Project - Bank of America
+Project contains many teams and they are called scrum teams (POD)  
+
+Consider client as your project team *****
+Each POD is a scrum or agile team
+
+Scrum Team 
+	* Scrum Master - POD lead
+	* Product Owner - BIM/BOM
+	* New hire team config team
+	* New hire testing team
+	
+Scrum team
+	Product Owner(PO) - BIM or BOM
+	Scrum master - Like lead but does only managerial work
+	Devs(Onshore and offshore) - 
+	Testers(Onshore and offshore)
+	Business Tester if there is any
+	
+	In my team totally 12 members
+	1. PO (client person)
+	2. SM (from client or from our company)
+	3. 2 dev in onsite (from client or from our company)
+	4. 3 dev in offshore (from client or from our company)
+	5. 3 Tester in offshore (You and other two) 
+	6. 1 Tester in onshore (Testing lead)
+	7. Business Tester or BA 
+	
+Company - Capgemini
+Client - Fidelity 
+Outsourcing their project to Capgemini
+Chennai have fidelity office too. 
+Project - Fidelity invesment
+Our project have both Client team persons as well as Capgemini team persons
+
+************************************************
+
+Day to day life at work 
+
+When do you automate 
+
+How many test cases do you write on a day
+	* where are we with the framework 
+	* complexity of the test cases
+	
+Tell me about yourself
+Explain your project 
+day to day at office
+Tell about your team
+
+****************************************************************************
+
+Agile and Waterfall methodologies
+
+
+Multiple Agile teams. 
+
+Agile teams & Members
+
+Sprint
+
+Features -> Epics -> Stories
+
+Story - Acceptance Criteria
+1) Understanding - purpose of the story, what is expected, which tech
+2) Story point - 1, 2, 3, 5, 8, 13 (Anonymous)
+
+Sprint
+
+Sprint ceremonies
+
+PI Planning
+	* Client or client's representative explains their initiative or goal or tells the feature they want in their app
+	* Product owner, Lead, Scrum master and Tech arch from each agile team will participate
+	* Each agile team will be give one or more feature to work on.
+
+* In order to start the sprint, I should know what stories my team need to work before the start of the sprint
+
+How many stories we are going to work
+Who is going to work on which story
+What the priority
+Who is on leave during the sprint/ Any Holidays
+
+Sprint planning - Sprint start 
+ * Mostly starts by Wednesday or Thursday
+ * Normally two weeks
+ * Always happen during the previous print
+ * What are the stories are we going to work on this sprint
+ * Who is going to work on which story
+ * How much story point for each story
+ * How many story points we are going to work on this sprint
+ 
+ * Sprint ends on the last day of the Sprint
+ 
+Sprint refinement or backlog refinement
+	* Product owner or Dev lead or tech arch, explains each stories in the backlog
+	* What is the expectation
+	* Defines Acceptance criteria
+	* What technologies involved in the story
+	* Testing needed or not 
+
+Status Call/Huddle
+
+* What you did yesterday
+* Whats your plan for today
+* What will you do on tomorrow. 
+* Any road blocks you faced/will face to complete the work
+
+Run by - Scrum master
+Max time for the meeting - 15 minutes
+No technical talks
+
+* Sprint Demo
+	* Where all the agile team members participate
+	* We need to demonstrate what we worked 
+	* Either we need to give demo or show the screenshots(for the time being)
+	* Usually given by Product Owner or Lead 
+	* Sometimes, tester also need to give
+
+* Sprint Retrospective
+	During the last sprint
+		* What went well
+		* What did not go well
+		* What we need to continue doing
+		* Appreciation
+		* Dependencies from other team went well or not
+
+Home work 
+
+SDLC
+STLC
+defect bug cycle
+How regression team works 
+How do you support regression
+When will you do the automation in a sprint

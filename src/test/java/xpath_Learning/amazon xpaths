@@ -1,0 +1,15 @@
+website: https://www.amazon.in
+
+
+//a[@id='nav-logo-sprites']
+//div[@id='nav-logo']//following::a[@id='nav-logo-sprites']
+//div[@id='nav-logo']//child::a
+
+//span[contains(text(),'Update location')]
+//div[@id='glow-ingress-block']//following::span[contains(text(),'Update location')]
+
+
+//div[@class='nav-search-facade']
+
+//div[@class='nav-search-facade']//following-sibling::label
+

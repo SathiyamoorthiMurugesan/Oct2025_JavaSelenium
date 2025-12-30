@@ -68,7 +68,7 @@ div[contains(@class,'items-center')]/child::span
 
 //div[@id='m_class']/following-sibling::a[1]
 
-//span[contains(text()='All rights')]
+//span[contains(text(),'All rights')]
 
 //svg[@id='embeddedMessagingIconChat']  --won't work..svg will often fail..so use * instead of svg
 

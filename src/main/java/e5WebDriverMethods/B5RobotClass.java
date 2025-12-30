@@ -13,7 +13,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
-import fileReading.PropertyFileReading;
+//import fileReading.PropertyFileReading;
 
 public class B5RobotClass {
 

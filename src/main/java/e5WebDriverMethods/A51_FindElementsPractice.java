@@ -41,7 +41,7 @@ public class A51_FindElementsPractice {
 //		int count = 1;
 //		for (WebElement eachTitle : mobile_AllResultsTitles) {
 //			if(count == 4) {
-////			System.out.println(eachTitle);
+//			System.out.println(eachTitle);
 //			WebElement specificTitleText = eachTitle.findElement(By.tagName("span"));
 //			System.out.println(specificTitleText.getText());
 //			System.out.println();

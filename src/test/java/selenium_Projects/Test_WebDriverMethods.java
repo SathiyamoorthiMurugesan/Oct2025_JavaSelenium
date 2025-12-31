@@ -19,7 +19,7 @@ public class Test_WebDriverMethods {
 		Test_WindowMethods winMethod = new Test_WindowMethods();  //creating obj to the class to access it's non-static methods
 		winMethod.launchURL("https://www.w3schools.com/");
 		winMethod.maximizeWindow();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		System.out.println(driver.getTitle());
 		System.out.println(driver.getCurrentUrl());
 		driver.findElement(By.id("tnb-login-btn")).click();

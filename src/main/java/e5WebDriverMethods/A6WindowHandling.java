@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -17,7 +18,9 @@ public class A6WindowHandling {
 		System.setProperty("webdriver.chrome.driver",
 				"C:\\Users\\LENOVO\\git\\Feb25_JavaSelenium\\src\\main\\resources\\drivers\\chromedriver_136.exe");
 		WebDriver driver = new ChromeDriver(); // session id and window handle will be created.
-
+//		WebDriver driver = new FirefoxDriver();
+		
+//		casting
 		SessionId sessionId = ((RemoteWebDriver) driver).getSessionId();
 		System.out.println("Driver session ID: " + sessionId);
 
@@ -124,5 +127,103 @@ public class A6WindowHandling {
 			System.out.println(driver.getTitle());
 		}
 	}
+	
+	public void switchToWindowBasedOnXpath(Set<String> allWinHanles, String xpath) {
+		for (String eachWinHandleId : allWinHanles) {
+
+			driver.switchTo().window(eachWinHandleId);
+			try {
+				driver.findElement(By.xpath(xpath));
+				break;
+			} catch (NoSuchElementException e) {
+
+			}
+		}
+		System.out.println(driver.getTitle());
+	}
+
+	public void switchToWindowBasedOnId(Set<String> allWinHanles, String id) {
+		for (String eachWinHandleId : allWinHanles) {
+
+			driver.switchTo().window(eachWinHandleId);
+			try {
+				driver.findElement(By.xpath(id));
+				break;
+			} catch (NoSuchElementException e) {
+
+			}
+		}
+		System.out.println(driver.getTitle());
+	}
+	
+	public void closeTheFirstWindowAnMoveTheFocusToTheSecond() {
+		String parentWindowHandleID = driver.getWindowHandle();
+
+		Set<String> allWindowHandles = driver.getWindowHandles();
+
+		driver.close();
+
+		for (String eachWindowHandle : allWindowHandles) {
+			if (!eachWindowHandle.equals(parentWindowHandleID)) {
+				driver.switchTo().window(eachWindowHandle);
+				break;
+			}
+		}
+		System.out.println("Title of the current page: " + driver.getTitle());
+	}
+
+	public void moveTheFocusToTheSecond() {
+		String parentWindowHandleID = driver.getWindowHandle();
+
+		Set<String> allWindowHandles = driver.getWindowHandles();
+
+		for (String eachWindowHandle : allWindowHandles) {
+			if (!eachWindowHandle.equals(parentWindowHandleID)) {
+				driver.switchTo().window(eachWindowHandle);
+				break;
+			}
+		}
+		System.out.println("Title of the current page: " + driver.getTitle());
+	}
+
+	public void moveTheFocusToTheGivenPage(String pageTitle) {
+		String parentWindowHandleID = driver.getWindowHandle();
+
+		Set<String> allWindowHandles = driver.getWindowHandles();
+
+		String my5thWindowHandleId = null;
+
+		for (String eachWindowHandle : allWindowHandles) {
+			driver.switchTo().window(eachWindowHandle);
+			if (!driver.getTitle().contains(pageTitle)) {
+				driver.close();
+			} else {
+				my5thWindowHandleId = driver.getWindowHandle();
+			}
+		}
+
+		driver.switchTo().window(my5thWindowHandleId);
+
+		System.out.println(driver.getTitle());
+	}
+
+	public void moveTheFocusToTheGivenPage(Set<String> allWindowHandles, String pageTitle) {
+
+		String my5thWindowHandleId = null;
+
+		for (String eachWindowHandle : allWindowHandles) {
+			driver.switchTo().window(eachWindowHandle);
+			if (!driver.getTitle().contains(pageTitle)) {
+				driver.close();
+			} else {
+				my5thWindowHandleId = driver.getWindowHandle();
+			}
+		}
+
+		driver.switchTo().window(my5thWindowHandleId);
+
+		System.out.println(driver.getTitle());
+	}
+
 
 }

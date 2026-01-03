@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Selenium Alert Practice</title>
+</head>
+<body>
+
+    <h2>Selenium Alert Practice Page</h2>
+
+    <!-- Simple Alert -->
+    <button id="alertBtn" onclick="showAlert()">Show Alert</button>
+    <br><br>
+
+    <!-- Confirmation Alert -->
+    <button id="confirmBtn" onclick="showConfirm()">Show Confirm</button>
+    <p id="confirmResult"></p>
+
+    <!-- Prompt Alert -->
+    <button id="promptBtn" onclick="showPrompt()">Show Prompt</button>
+    <p id="promptResult"></p>
+
+    <script>
+        function showAlert() {
+            alert("This is a simple alert.\nIt will stay until you click OK.");
+        }
+
+        function showConfirm() {
+            var result = confirm("Do you want to continue?\nThis alert will stay until you choose.");
+            if (result) {
+                document.getElementById("confirmResult").innerText = "You clicked OK";
+            } else {
+                document.getElementById("confirmResult").innerText = "You clicked Cancel";
+            }
+        }
+
+        function showPrompt() {
+            var name = prompt("Enter your name.\nThis prompt will stay until handled:");
+            if (name !== null && name.trim() !== "") {
+                document.getElementById("promptResult").innerText = "Hello, " + name;
+            } else {
+                document.getElementById("promptResult").innerText = "No name entered";
+            }
+        }
+    </script>
+
+</body>
+</html>

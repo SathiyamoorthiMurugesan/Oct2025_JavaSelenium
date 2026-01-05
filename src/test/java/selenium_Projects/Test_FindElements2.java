@@ -20,7 +20,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Test_FindElements2 {
 	static WebDriver driver = new ChromeDriver();
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		Test_FindElements2 obj = new Test_FindElements2();
 		obj.searchMobile();
 //		obj.mobileNames();
@@ -31,6 +31,8 @@ public class Test_FindElements2 {
 //		System.out.println(driver.findElement(By.xpath("//div[@class='a-section a-spacing-small a-spacing-top-small']//div[@data-cy= 'title-recipe']//span")).getText());
 //		System.out.println(driver.findElement(By.xpath("//div[@class='a-section a-spacing-small a-spacing-top-small']//div[@data-cy='title-recipe']//span//following::div[@data-cy='price-recipe']//span[@class='a-price-whole']")).getText());
 //      System.out.println(driver.findElement(By.xpath("//div[@class='a-section a-spacing-small a-spacing-top-small']//div[@data-cy='title-recipe']//span//following::div[@data-cy='price-recipe']//span[@class='a-price-whole']//following::span[@class='a-letter-space']//following-sibling::span[contains(text(),'off')]")).getText());
+		Thread.sleep(5000);
+		driver.quit();
 	}
 
 	public void searchMobile() {
@@ -95,24 +97,24 @@ public class Test_FindElements2 {
 		}
 
 	}
-
+	
 	public void hasMorethan25PercentOffer() {
 		List<WebElement> mobiles = driver.findElements(By.xpath(
-				"//div[@class='a-section a-spacing-small a-spacing-top-small']//div[@data-cy='title-recipe']//span//following::div[@data-cy='price-recipe']//span[@class='a-price-whole']"));
+				"//div[@class='a-section a-spacing-small a-spacing-top-small']"));
 
 		for (WebElement each : mobiles) {
 			String offer = each.findElement(By.xpath(
-					".//following::span[@class='a-letter-space']//following-sibling::span[contains(text(),'off')]"))
-					.getText();
+					".//div[@data-cy='title-recipe']//span//following::div[@data-cy='price-recipe']//span[@class='a-price-whole']//following::span[@class='a-letter-space']//following-sibling::span[contains(text(),'off')]")).getText();
 			try {
 				int offPer = Integer.parseInt(offer.substring(1, 3));
 				if (offPer > 25) {
 					System.out.println(
-							"Mobile Name: " + each.findElement(By.xpath(".//div[@data-cy= 'title-recipe']//span")).getText());
+							"Mobile Name: " + each.findElement(By.xpath(".//div[@data-cy='title-recipe']//span")).getText());
 					System.out.println("Mobile Price: " + each
 							.findElement(By.xpath(".//following::div[@data-cy='price-recipe']//span[@class='a-price-whole']"))
 							.getText());
 					System.out.println("Offer: "+offer);
+					System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 				}
 			} catch (Exception e) {
 

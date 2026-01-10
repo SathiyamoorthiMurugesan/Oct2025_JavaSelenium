@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Actions Class Practice Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .box {
+            width: 120px;
+            height: 120px;
+            background-color: lightblue;
+            margin: 20px;
+            display: inline-block;
+            text-align: center;
+            line-height: 120px;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+
+        #drag {
+            background-color: orange;
+        }
+
+        #drop {
+            background-color: lightgreen;
+        }
+
+        #hoverBox {
+            background-color: pink;
+        }
+
+        #clickBox {
+            background-color: lightcoral;
+        }
+
+        #doubleClickBox {
+            background-color: lightseagreen;
+        }
+
+        #rightClickBox {
+            background-color: lightskyblue;
+        }
+
+        input {
+            display: block;
+            margin: 10px 0;
+            padding: 8px;
+            width: 300px;
+        }
+    </style>
+
+    <script>
+        function showAlert(msg) {
+            alert(msg);
+        }
+
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+            alert("Dropped Successfully!");
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Actions Class Practice Page</h1>
+
+    <h2>Mouse Actions</h2>
+
+    <div id="clickBox" class="box" onclick="showAlert('Single Clicked!')">
+        Click
+    </div>
+
+    <div id="doubleClickBox" class="box" ondblclick="showAlert('Double Clicked!')">
+        Double Click
+    </div>
+
+    <div id="rightClickBox" class="box" oncontextmenu="showAlert('Right Clicked!'); return false;">
+        Right Click
+    </div>
+
+    <div id="hoverBox" class="box" onmouseover="this.innerHTML='Hovered!'" onmouseout="this.innerHTML='Hover Me'">
+        Hover Me
+    </div>
+
+    <h2>Drag and Drop</h2>
+
+    <div id="drag" class="box" draggable="true" ondragstart="drag(event)">
+        Drag Me
+    </div>
+
+    <div id="drop" class="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+        Drop Here
+    </div>
+
+    <h2>Keyboard Actions</h2>
+
+    <label>Normal Typing:</label>
+    <input type="text" id="normalInput" placeholder="Type here...">
+
+    <label>Uppercase (Use SHIFT):</label>
+    <input type="text" id="shiftInput" placeholder="Use Shift + Keys">
+
+    <label>Copy-Paste Practice:</label>
+    <input type="text" id="copyInput" value="Copy this text">
+    <input type="text" id="pasteInput" placeholder="Paste here using Ctrl+V">
+
+</body>
+</html>

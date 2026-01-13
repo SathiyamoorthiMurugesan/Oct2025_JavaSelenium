@@ -14,7 +14,6 @@ public class B4ActionsClass {
 	static WebDriver driver;
 
 	public static void main(String[] args) throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", ".\\src\\main\\resources\\drivers\\chromedriver_136.exe");
 		driver = new ChromeDriver();
 
 		driver.manage().window().maximize();

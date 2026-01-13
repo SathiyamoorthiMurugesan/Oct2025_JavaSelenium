@@ -21,30 +21,31 @@ public class B5RobotClass {
 	static B5RobotClass obj = new B5RobotClass();
 
 	public static void main(String[] args) throws AWTException, InterruptedException {
-		System.setProperty("webdriver.chrome.driver", ".\\src\\main\\resources\\drivers\\chromedriver_136.exe");
 		driver = new ChromeDriver();
 
 		driver.manage().window().maximize();
 
-		driver.get("https://demo.guru99.com/test/upload/");
+		driver.get("file:///C:/Users/LENOVO/OneDrive/Desktop/FileUpload%20using%20robot.html");
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-//		driver.findElement(By.id("uploadfile_0")).sendKeys("C:\\Users\\LENOVO\\OneDrive\\Desktop\\abc.java");
+//		driver.findElement(By.id("uploadfile_0")).sendKeys("C:\\Users\\LENOVO\\OneDrive\\Desktop\\MyProgram.java");
 
 		Thread.sleep(3000);
 		
-//		StringSelection stringSelection = new StringSelection("C:\\Users\\LENOVO\\OneDrive\\Desktop\\abc.java");
-//		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
+		StringSelection stringSelection = new StringSelection("C:\\Users\\LENOVO\\OneDrive\\Desktop\\MyProgram.java");
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
 
 //		driver.findElement(By.id("uploadfile_0")).click();
-		boolean abc = driver.findElement(By.xpath("//input[contains(@id, 'uploadfile')]")).isDisplayed();
+		boolean abc = driver.findElement(By.xpath("//input[contains(@id, 'fileUpload')]")).isDisplayed();
 		System.out.println(abc + "*********************");
 		
-//		/html/body/div[2]/div/div/div[1]/form/div[2]/div[1]/div/div/input
-		//*[@id="uploadfile_0"]
 		
-		driver.findElement(By.xpath("//*[@id='uploadfile_0']")).click();
+//		driver.findElement(By.xpath("//*[@id='fileUpload']")).click();
+		WebElement button_Upload = driver.findElement(By.xpath("//*[@id='fileUpload']"));
+		Actions actions = new Actions(driver);
+//		actions.click(button_Upload).build().perform();
+		actions.moveToElement(button_Upload).click().perform();
 		Thread.sleep(3000);
 
 		Robot robo = new Robot();
@@ -55,60 +56,6 @@ public class B5RobotClass {
 		robo.keyRelease(KeyEvent.VK_CONTROL);
 
 		Thread.sleep(3000);
-
-		robo.keyPress(KeyEvent.VK_ENTER);
-		robo.keyRelease(KeyEvent.VK_ENTER);
-
-	}
-
-	@SuppressWarnings("deprecation")
-	public static void main1(String[] args) throws Exception {
-		System.setProperty("webdriver.chrome.driver", ".\\src\\main\\resources\\drivers\\chromedriver_128.exe");
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.get("https://demo.guru99.com/test/upload/");
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-
-//		String filePath = "C:\\Users\\LENOVO\\OneDrive\\Desktop\\abc.txt";
-//		String filePath = "C:/Users/LENOVO/OneDrive/Desktop/abc.txt";
-//		String filePath = "C:\Users\LENOVO\OneDrive\Desktop\abc.txt";
-
-//		PropertyFileReading obj = new PropertyFileReading();
-//
-//		String filePath = obj.readApropertyAndReturnItsValue("filePath");
-//		System.out.println(filePath);
-//
-//		StringSelection stringSelection = new StringSelection(filePath);
-//		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
-
-//		driver.findElement(By.className("upload_txt")).click();
-
-//		driver.findElement(By.id("uploadfile_0")).click();
-
-//		driver.findElement(By.xpath("//div[@id='file_wraper0']//input[@type='file']")).click();
-
-		Thread.sleep(2000);
-
-		WebElement fileUploadButton = driver.findElement(By.xpath("//div[@id='file_wraper0']//input[@type='file']"));
-//		Actions actions = new Actions(driver);
-//		actions.moveToElement(fileUploadButton).click().perform();
-//		actions.click(fileUploadButton).perform();
-
-		fileUploadButton.sendKeys("C:\\Users\\LENOVO\\OneDrive\\Desktop\\abc.txt");
-
-//		boolean fileUploadCheck = driver.findElement(By.xpath("//div[@id='file_wraper0']//input[@type='file']")).isDisplayed();
-//		System.out.println(fileUploadCheck);
-
-		Thread.sleep(2000);
-
-		Robot robo = new Robot();
-
-		robo.keyPress(KeyEvent.VK_CONTROL);
-		robo.keyPress(KeyEvent.VK_V);
-		robo.keyRelease(KeyEvent.VK_V);
-		robo.keyRelease(KeyEvent.VK_CONTROL);
-
-//		Thread.sleep(3000);
 
 		robo.keyPress(KeyEvent.VK_ENTER);
 		robo.keyRelease(KeyEvent.VK_ENTER);
@@ -118,8 +65,11 @@ public class B5RobotClass {
 	public void uploadAFileUsingSendKeys(By by, String pathOfFileToBeUploaded) {
 		driver.findElement(by).sendKeys(pathOfFileToBeUploaded);
 	}
-	// uploadAFileUsingSendKeys(By.id("fileToUpload"),"D:\\sathiya\\Text123.txt"),
-
+	
+	public void uploadAFileUsingSendKeys(WebElement ele, String pathOfFileToBeUploaded) {
+		ele.sendKeys(pathOfFileToBeUploaded);
+	}
+	
 	public void uploadAFileUsingRobotClass(String pathOfFile) throws Exception {
 		Robot robo = new Robot();
 //		C:\Users\LENOVO\Desktop\Vinothini.txt
@@ -134,8 +84,10 @@ public class B5RobotClass {
 
 		Thread.sleep(3000);
 
-		robo.keyPress(KeyEvent.VK_ENTER);
-		robo.keyRelease(KeyEvent.VK_ENTER);
+//		robo.keyPress(KeyEvent.VK_ENTER);
+//		robo.keyRelease(KeyEvent.VK_ENTER);
+		
+		enterAKeyUsingRobotClass("Enter");
 
 	}
 
@@ -146,7 +98,17 @@ public class B5RobotClass {
 			robo.keyPress(KeyEvent.VK_A);
 			robo.keyRelease(KeyEvent.VK_A);
 			break;
-
+		case "A":
+			robo.keyPress(KeyEvent.VK_SHIFT);
+			robo.keyPress(KeyEvent.VK_A);
+			robo.keyRelease(KeyEvent.VK_A);
+			robo.keyRelease(KeyEvent.VK_SHIFT);
+			break;
+		case "Enter":
+			robo.keyPress(KeyEvent.VK_ENTER);
+			robo.keyRelease(KeyEvent.VK_ENTER);
+			break;
+		
 		}
 
 	}

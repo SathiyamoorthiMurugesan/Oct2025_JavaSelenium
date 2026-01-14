@@ -15,7 +15,7 @@ static and non-static variables in interface are final in nature, means,
 ============================================================================================
 
 //private - we can use it only inside that class
-//protected - we can use it only in the same class 
+//protected - we can use it only in the same package 
 
 * public and default (implicit) methods should not have any body (body less/ abstract methods)
 * static, default (explicitly specified)and private  methods should be created with body
@@ -54,7 +54,7 @@ Ex: We can have interface as reference (A5_InterfaceWithObject xyz = new MyClass
 
 public interface MyInterface {
 
-	int a = 10; // non-static variable created in interface are final in nature. so we have to
+	int a=10; // non-static variable created in interface are final in nature. so we have to
 				// declare and initialize it then and there
 	static String b = "Windows";
 	public int c = 20;
@@ -104,7 +104,7 @@ class MyClassA implements MyInterface { // Parent of MyClassA is MyInterface
 		// protected void methodB(); Illegal modifier for the interface method methodB;
 		// only public, private, abstract, default, static and strictfp are permitted
 
-		static void methodB() {
+		default void methodB() {
 			int abc;
 			abc = 100;
 			abc = 300; // local variables are not final in nature. we can assign the value even after
@@ -141,4 +141,21 @@ class MyClassA implements MyInterface { // Parent of MyClassA is MyInterface
 		}
 
 	}
+}
+
+ class ClassA implements MyInterface{
+
+	@Override
+	public void method1() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void method4() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
 }

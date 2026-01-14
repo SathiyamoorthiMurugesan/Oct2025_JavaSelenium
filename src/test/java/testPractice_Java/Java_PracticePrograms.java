@@ -1,5 +1,8 @@
 package testPractice_Java;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Java_PracticePrograms {
 
 	public static void main(String[] args) {
@@ -9,7 +12,8 @@ public class Java_PracticePrograms {
 //		obj.reverseString("The Learning Hub");
 //		obj.palindrome("Amma");
 //		obj.fibonacciSeries();
-		obj.countVowelsConsonants("Elephant");
+//		obj.countVowelsConsonants("Elephant");
+		obj.simpleDateFormat();
 	}
 
 	public void reverseString(String str) {
@@ -70,6 +74,16 @@ public class Java_PracticePrograms {
 		}
 		System.out.println("Vowels: " + vowel);
 		System.out.println("Consonant: " + cons);
+	}
+	
+	public void simpleDateFormat() {
+		String pattern = "DD-MM-YYYY";
+		
+		SimpleDateFormat sdf = new SimpleDateFormat(pattern);
+		Date todayDate = new Date();
+		
+		String date = sdf.format(todayDate);
+		System.out.println(date);
 	}
 
 }

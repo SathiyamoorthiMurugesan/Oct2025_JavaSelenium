@@ -17,71 +17,66 @@ public class Test_ActionClassPractice {
 
 	public static void main(String[] args) throws Exception {
 
-		driver.get("file:///C:/Users/monis/OneDrive/Desktop/!DOCTYPE%20html.html");
+		driver.get("file:///C:/Users/monis/OneDrive/Desktop/Actions.html");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
 		Test_ActionClassPractice obj = new Test_ActionClassPractice();
 
-		act = new Actions(driver);
+		act = new Actions(driver);  //It's a parameterized constructor. here passing the driver as a parameter
 
-		obj.singleClick();
-		obj.doubleClick();
-		obj.rightClick();
-		obj.hoverMe();
-		obj.dragAndDrop();
-		obj.type();
-		obj.typeinUpperCase();
-		obj.doCopyPaste();
+		obj.singleClick(driver.findElement(By.id("clickBox")));
+		obj.doubleClick(driver.findElement(By.id("doubleClickBox")));
+		obj.rightClick(driver.findElement(By.id("rightClickBox")));
+		obj.hoverMe(driver.findElement(By.id("hoverBox")));
+		obj.dragAndDrop(driver.findElement(By.id("drag")),driver.findElement(By.id("drop")));
+		obj.type(driver.findElement(By.id("normalInput")));
+		obj.typeinUpperCase(driver.findElement(By.id("shiftInput")));
+		obj.doCopyPaste(driver.findElement(By.id("copyInput")));
+		
+		act.keyDown(Keys.PAGE_UP).keyUp(Keys.PAGE_UP).perform();
 
 	}
 
-	public void singleClick() {
-		element = driver.findElement(By.id("clickBox"));
+	public void singleClick(WebElement element) {
 		act.click(element).perform();
 		driver.switchTo().alert().accept();
 	}
 
-	public void doubleClick() {
+	public void doubleClick(WebElement element) {
 
-		element = driver.findElement(By.id("doubleClickBox"));
 		act.doubleClick(element).perform();
 		driver.switchTo().alert().accept();
 	}
 
-	public void rightClick() {
+	public void rightClick(WebElement element) {
 
-		element = driver.findElement(By.id("rightClickBox"));
 		act.contextClick(element).perform();
 		driver.switchTo().alert().accept();
 	}
 
-	public void hoverMe() {
-		element = driver.findElement(By.id("hoverBox"));
+	public void hoverMe(WebElement element) {
 		act.moveToElement(element).perform();
 		System.out.println(element.getText());
 	}
 
-	public void dragAndDrop() {
-		WebElement src = driver.findElement(By.id("drag"));
-		WebElement tar = driver.findElement(By.id("drop"));
+	public void dragAndDrop(WebElement src, WebElement tar) {
 		Action action = act.dragAndDrop(src, tar).build();
 		action.perform();
 		driver.switchTo().alert().accept();
 	}
 
-	public void type() {
-		element = driver.findElement(By.id("normalInput"));
+	public void type(WebElement element) {
 		act.sendKeys(element, "I am Typing here").perform();
 	}
 
-	public void typeinUpperCase() {
-		driver.findElement(By.id("shiftInput")).click();
+	public void typeinUpperCase(WebElement element) {
+		element.click();
 		act.keyDown(Keys.SHIFT).sendKeys("Hello all").keyUp(Keys.SHIFT).perform(); // Uppercase = Shift+characters
 	}
 
-	public void doCopyPaste() {
-		WebElement copyEle = driver.findElement(By.id("copyInput"));
+	public void doCopyPaste(WebElement element) {
+		WebElement copyEle = element;
 		copyEle.getAttribute("value"); // inner text is not available in this element tag. so using getAttribute method to get the text present in this element.
 		copyEle.click();
 		act.keyDown(Keys.CONTROL).sendKeys("a").sendKeys("c").keyUp(Keys.CONTROL).perform();

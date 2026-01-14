@@ -2554,10 +2554,11 @@ Casting in Java refers to converting one data type into another. There are two m
 		Smaller to larger type conversion.
 
 Examples:
-	int a = 10;
-	double b = a;  // int to double
 	Order:
 	byte → short → int → long → float → double
+	
+	int a = 10;
+	double b = a;  // int to double
 
 	b. Narrowing Casting (Explicit)
 		Manually done using parentheses.

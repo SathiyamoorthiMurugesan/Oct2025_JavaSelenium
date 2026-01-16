@@ -12,10 +12,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class B9WebTableInSelenium {
 
 	static WebDriver driver;
-
+	
 	public static void main(String[] args) {
-
-		System.setProperty("webdriver.chrome.driver", ".\\src\\main\\resources\\drivers\\chromedriver_136.exe");
 		driver = new ChromeDriver();
 
 		driver.manage().window().maximize();
@@ -23,59 +21,32 @@ public class B9WebTableInSelenium {
 		driver.get("https://www.tutorialspoint.com/selenium/practice/webtables.php");
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
-		HashMap<String, String> myMap = getSpecificRowValueAndStoreItInMap(1);
-
-//		System.out.println(myMap.get("First Name"));
-
-	}
-
-	public static void main1(String[] args) {
-		System.setProperty("webdriver.chrome.driver", ".\\src\\main\\resources\\drivers\\chromedriver_136.exe");
-		driver = new ChromeDriver();
-
-		driver.manage().window().maximize();
-
-		driver.get("https://www.tutorialspoint.com/selenium/practice/webtables.php");
-
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
+		
 		WebElement myTable = driver.findElement(By.tagName("table"));
 
 		List<WebElement> allRows = myTable.findElements(By.tagName("tr"));
 		System.out.println("The Number of rows in the web table :" + allRows.size());
-
+		
 //		get only the header
-		WebElement headerRow = allRows.get(0);
-		List<WebElement> allHeaders = headerRow.findElements(By.tagName("th"));
-		for (WebElement eachHeader : allHeaders) {
-			System.out.println(eachHeader.getText());
-		}
-
-		WebElement firstRow = allRows.get(1);
-		List<WebElement> firstRowData = firstRow.findElements(By.tagName("td"));
-		for (WebElement eachData : firstRowData) {
-			System.out.println(eachData.getText());
-		}
-
-//		WebElement secondRow = allRows.get(2);
-//		List<WebElement> secondRowData = secondRow.findElements(By.tagName("td"));
-//		for (WebElement eachData : secondRowData) {
+//		WebElement headerRow = allRows.get(0);
+//		List<WebElement> allHeaders = headerRow.findElements(By.tagName("th"));
+//		for (WebElement eachHeader : allHeaders) {
+//			System.out.println(eachHeader.getText());
+//		}
+//		
+//		WebElement firstRow = allRows.get(1);
+//		List<WebElement> firstRowData = firstRow.findElements(By.tagName("td"));
+//		for (WebElement eachData : firstRowData) {
 //			System.out.println(eachData.getText());
 //		}
-//
-//		System.out.println("Getting all row values(excluding header) using for loop");
-//
+		
 //		for (int i = 1; i < allRows.size(); i++) {
-//			List<WebElement> allRowData = allRows.get(i).findElements(By.tagName("td"));
-//			for (WebElement eachRowData : allRowData) {
-//				System.out.println(eachRowData.getText());
-//			}
-//			System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+//		List<WebElement> allRowData = allRows.get(i).findElements(By.tagName("td"));
+//		for (WebElement eachRowData : allRowData) {
+//			System.out.println(eachRowData.getText());
 //		}
-//
-//		System.out.println("Getting all row values(including header) using for loop");
-//
+//		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+		
 		for (int i = 0; i < allRows.size(); i++) {
 			List<WebElement> allRowData = null;
 			if (i == 0) {
@@ -88,6 +59,21 @@ public class B9WebTableInSelenium {
 			}
 			System.out.println("*************");
 		}
+	}
+
+	public static void main2(String[] args) {
+
+		driver = new ChromeDriver();
+
+		driver.manage().window().maximize();
+
+		driver.get("https://www.tutorialspoint.com/selenium/practice/webtables.php");
+
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+		HashMap<String, String> myMap = getSpecificRowValueAndStoreItInMap(1);
+
+//		System.out.println(myMap.get("First Name"));
 
 	}
 

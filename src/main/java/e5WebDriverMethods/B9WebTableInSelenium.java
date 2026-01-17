@@ -59,6 +59,8 @@ public class B9WebTableInSelenium {
 			}
 			System.out.println("*************");
 		}
+		
+		getSpecificRowValueAndStoreItInMap(2);
 	}
 
 	public static void main2(String[] args) {

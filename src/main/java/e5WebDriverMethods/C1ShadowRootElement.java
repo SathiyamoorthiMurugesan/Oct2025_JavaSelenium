@@ -5,6 +5,7 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class C1ShadowRootElement {
@@ -20,10 +21,14 @@ public class C1ShadowRootElement {
 //	* Keep in mind that, xpath wond work inside the shadow root. 
 //		* You need to use the CSS Selector
 	
+//	Element 
+//		ShadowRoot
+//			ShadowDOM
+//				MyElement
+	
 	static WebDriver driver;
 
 	public static void main(String[] args) {
-		System.setProperty("webdriver.chrome.driver", ".\\src\\main\\resources\\drivers\\chromedriver_136.exe");
 		driver = new ChromeDriver();
 
 		driver.manage().window().maximize();
@@ -32,11 +37,13 @@ public class C1ShadowRootElement {
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(7));
 		
-		SearchContext shadowHost1 = driver.findElement(By.id("shadow_host")).getShadowRoot();
+		WebElement shadowHost1 = driver.findElement(By.id("shadow_host"));
 		
-//		shadowHost1.findElement(By.xpath("//input[@type='text']")).sendKeys("Hello");
+		SearchContext shadowRoot = shadowHost1.getShadowRoot();
 		
-		shadowHost1.findElement(By.cssSelector("input[type = 'text']")).sendKeys("Hello");
+//		shadowRoot.findElement(By.xpath("//input[@type='text']")).sendKeys("Hello");
+		
+		shadowRoot.findElement(By.cssSelector("input[type = 'text']")).sendKeys("Hello");
 		
 //		trying to access an element inside the nested shadow root
 		

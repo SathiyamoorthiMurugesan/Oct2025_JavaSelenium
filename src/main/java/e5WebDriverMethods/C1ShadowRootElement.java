@@ -47,7 +47,7 @@ public class C1ShadowRootElement {
 		
 //		trying to access an element inside the nested shadow root
 		
-		SearchContext nestedShadowHost = shadowHost1.findElement(By.cssSelector("#nested_shadow_host")).getShadowRoot();
+		SearchContext nestedShadowHost = shadowRoot.findElement(By.cssSelector("#nested_shadow_host")).getShadowRoot();
 		
 		String nestedText = nestedShadowHost.findElement(By.cssSelector("div[id='nested_shadow_content']>div")).getText();
 		

@@ -47,11 +47,11 @@ public class Test_ScreenShot {
 		File imgFile = new File(filePath + "\\" + formattedDate + ".jpeg");
 		FileHandler.copy(screenshotImg, imgFile);
 		
-		takeScreenshot();
+		takeScreenshot(".\\src\\test\\resources\\Screenshots\\");
 		Thread.sleep(2000);
 		scrollToElement();
 		Thread.sleep(2000);
-		takeScreenshot();
+		takeScreenshot(".\\src\\test\\resources\\Screenshots\\");
 		Thread.sleep(2000);
 
 	}
@@ -62,13 +62,13 @@ public class Test_ScreenShot {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
 
-		takeScreenshot();
+		takeScreenshot(".\\src\\test\\resources\\Screenshots\\");
 
 		Thread.sleep(2000);
 
 		scrollToElement();
 
-		takeScreenshot();
+		takeScreenshot(".\\src\\test\\resources\\Screenshots\\");
 
 	}
 
@@ -106,7 +106,7 @@ public class Test_ScreenShot {
 		ele.click();
 	}
 
-	public static void takeScreenshot() throws IOException {
+	public static void takeScreenshot(String file) throws IOException {
 
 //		TakesScreenshot ts = (TakesScreenshot)driver;               //casting 'driver' to the 'TakesScreenshot' Interface
 //		File screenshotImg = ts.getScreenshotAs(OutputType.FILE);   // It captures the screenshot and stored in a file format
@@ -121,7 +121,7 @@ public class Test_ScreenShot {
 		// or//
 
 		TakesScreenshot ts = (TakesScreenshot) driver;
-		File imgFile = new File(".\\src\\test\\resources\\Screenshots\\"
+		File imgFile = new File(file
 				+ DateTimeFormatter.ofPattern("DDMMYYYY-HHMMSS").format(LocalDateTime.now()) + ".jpeg");
 		FileHandler.copy(ts.getScreenshotAs(OutputType.FILE), imgFile);
 

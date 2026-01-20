@@ -2,6 +2,10 @@ package e7TestNG_AnnotationAttributes;
 
 import org.testng.annotations.Test;
 
+//eg: 
+//@Test (dependsOnMethods = "method1")
+//@Test(dependsOnMethods = {"method1", "method2"})
+
 public class A7_DependsOnMethod {
 	
 	@Test 

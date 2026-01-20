@@ -5,6 +5,7 @@
 		<groups>
 			<run>
 				<include name="Group2" />
+				<exclude name="Group1" />
 			</run>
 		</groups>
 		<classes>

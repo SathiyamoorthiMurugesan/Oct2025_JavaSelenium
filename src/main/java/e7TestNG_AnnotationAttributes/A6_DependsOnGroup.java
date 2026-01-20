@@ -26,7 +26,7 @@ public class A6_DependsOnGroup {
 	
 	@Test(dependsOnGroups = "groupA", alwaysRun = true)
 	public void alwaysRun() {
-		System.out.println("I am belongs to group2and3");
+		System.out.println("I am belongs to group2and3 and always run");
 	}
 
 	@Test(dependsOnGroups = "groupB")

@@ -2,7 +2,7 @@ package util;
 
 import java.io.File;
 import java.io.IOException;
-import java.time.Duration;    //pending - frame, robo
+import java.time.Duration;    //pending - robo
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
@@ -122,6 +122,8 @@ public class GenericMethods {
 		public void getTitle() {
 			System.out.println(driver.getTitle());
 		}
+		
+		//dropdown methods
 
 		public void ClickDropDownAndSelectByVisibleText(By attribute, String visibleText) {
 			dropDown = driver.findElement(attribute);
@@ -175,6 +177,8 @@ public class GenericMethods {
 
 		}
 		
+		//Alert methods
+		
 		public void clickAlert(By by) {
 			driver.findElement(by).click();
 		}
@@ -190,6 +194,16 @@ public class GenericMethods {
 		public void dismissAlert() {
 			switchFocusToAlert().dismiss();
 		}
+		
+		public void getTextFromAlert() {
+			switchFocusToAlert().getText();
+		}
+		
+		public void sendTextToAnAlert(String text) {
+			switchFocusToAlert().sendKeys(text);
+		}
+		
+		//webelement methods - action class
 		
 		public void singleClick(WebElement element) {
 			act.click(element).perform();
@@ -266,13 +280,8 @@ public class GenericMethods {
 			findElement.click();
 			System.out.println(wait.until(ExpectedConditions.invisibilityOfElementLocated(by)));
 		}
-
-		public void frameToBeAvailableAndSwitchToIt(By frameID, By tagName) {
-			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameID));
-			WebElement ele = wait.until(ExpectedConditions.visibilityOfElementLocated(tagName));
-			System.out.println(ele.getText());
-
-		}
+		
+		//methods using java script executor
 		
 		public void js_scrollDownByPixels() {
 			js.executeScript("window.scrollBy(0,500)");
@@ -321,6 +330,8 @@ public class GenericMethods {
 			js.executeScript("arguments[0].click();", ele);
 		}
 		
+		// screenshot
+		
 		public static void takeScreenshot(String filePath) throws IOException {
 
 //			TakesScreenshot ts = (TakesScreenshot)driver;               //casting 'driver' to the 'TakesScreenshot' Interface
@@ -341,6 +352,8 @@ public class GenericMethods {
 			FileHandler.copy(ts.getScreenshotAs(OutputType.FILE), imgFile);
 
 		}
+		
+		//webtable methods
 		
 		public static void getAllTableData() {
 
@@ -390,6 +403,60 @@ public class GenericMethods {
 			}
 			System.out.println(map);
 					
+		}
+		
+		//frames methods
+		public void frameToBeAvailableAndSwitchToIt(By frameID, By tagName) {
+			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameID));
+			WebElement ele = wait.until(ExpectedConditions.visibilityOfElementLocated(tagName));
+			System.out.println(ele.getText());
+
+		}
+		
+		public int noOfiFramesInWebPage() {
+			int noOfiFramesdriver = driver.findElements(By.tagName("iframe")).size();
+			return noOfiFramesdriver;
+		}
+
+		public int noOfFramesInWebPage() {
+			int noOfiFramesdriver = driver.findElements(By.tagName("frame")).size();
+			return noOfiFramesdriver;
+		}
+
+		public int noOfFramesiFramesInWebPage() {
+
+			return noOfiFramesInWebPage() + noOfFramesInWebPage();
+		}
+
+		public void switchToFrameByIndex(int frameIndex) {
+			driver.switchTo().frame(frameIndex);
+		}
+
+		public void switchToFrameByName(String frameName) {
+			driver.switchTo().frame(frameName);
+		}
+
+		public void switchToFrameByWebElement(WebElement frameElement) {
+			driver.switchTo().frame(frameElement);
+		}
+
+		public void switchToFrameByWebElement(String xpath) {
+			WebElement ele = driver.findElement(By.xpath(xpath));
+			driver.switchTo().frame(ele);
+		}
+
+		public void switchToAFrameByIndexAndClickAnElement(int frameIndex, WebElement ele) {
+			switchToFrameByIndex(frameIndex);
+			ele.click();
+		}
+
+		public void switchToAFrameByIndexAndSendTextToAnElement(int frameIndex, WebElement ele, String text) {
+			switchToFrameByIndex(frameIndex);
+			ele.sendKeys(text);
+		}
+
+		public void switchToParentFrame() {
+			driver.switchTo().parentFrame();
 		}
 
 
